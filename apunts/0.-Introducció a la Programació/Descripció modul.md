@@ -7,6 +7,9 @@ nav_order: 1
 ---
 
 
+<div align="center">
+
+<img src="logo.png" alt="Logo IES Benigasló" width="220"/>
 
 # GUIA DOCENT
 
