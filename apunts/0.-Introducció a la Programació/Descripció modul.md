@@ -1,260 +1,637 @@
 ---
-title: 0. Descripció del Mòdul
+title: 1. Introducció a la Programació
 parent: Índex
 layout: default
 has_children: true
-nav_order: 1
+nav_order: 2
 ---
 
+# RA1 — DESCOBRIM EL MÓN DE LA PROGRAMACIÓ
 
-<div align="center">
+## El repte
 
-<img src="logo.png" alt="Logo IES Benigasló" width="220"/>
+Durant este primer RA descobrirem què significa **programar**, com ens comuniquem amb un ordinador, com han evolucionat els llenguatges de programació i com podem transformar un problema en una solució que després podrem programar.
 
-# GUIA DOCENT
+Però no fareu un treball tradicional de buscar informació i copiar-la en un document.
 
-**IES Benigasló (La Vall d'Uixó)**
+El treball està dividit en **5 missions**. En cada missió rebreu primer una breu explicació dels conceptes necessaris i després haureu de **investigar, comprendre, relacionar i aplicar** el que heu aprés.
 
-*Família Professional d'Informàtica i Comunicacions*
+El procés serà sempre:
 
-*Conselleria d'Educació, Cultura, Universitats i Ocupació — Generalitat Valenciana*
+> **BUSCAR → COMPRENDRE → SELECCIONAR → RELACIONAR → CREAR**
 
-</div>
-
----
-
-## 1. Dades Generals del Cicle i del Mòdul
-
-| Concepte                      | Detall                                   |
-| :---------------------------- | :--------------------------------------- |
-| **Cicle Formatiu**            | Sistemes Microinformàtics i Xarxes (SMX) |
-| **Grau**                      | Grau Mitjà                               |
-| **Mòdul / Optativa**          | Introducció a la Programació             |
-| **Curs Acadèmic**             | 2026 / 2027                              |
-| **Curs**                      | 2n curs                                  |
-| **Càrrega Horària**           | 3 hores setmanals                        |
-| **Llenguatge de programació** | Python                                   |
-| **Aula**                      | Aula d'informàtica                       |
+**Duració:** 8 sessions
+**Organització:** individual, parelles o grups segons la missió
+**Lliurament:** Aules
+**Productes:** 5 missions
 
 ---
 
-## 2. Equip Docent i Canals de Comunicació
+# MISSIÓ 1 — LA MÀQUINA DEL TEMPS
 
-* **Professor/a:** Jaume Aragó Valls
-* **Correu electrònic corporatiu:** `j.aragovalls@edu.gva.es`
-* **Horari d'Atenció a l'Alumnat / Tutoria:** Dimarts 11:15 a 12:10
+## Què necessitem saber?
 
-> **Nota Important de Comunicació:**
-> Totes les notificacions i lliuraments es realitzaran exclusivament a través d'**Itaca**, d'**Aules** i del correu corporatiu oficial `@edu.gva.es`. No s'atendran comunicacions enviades des de comptes personals (Gmail, Hotmail, etc.).
+Un **llenguatge de programació** és un llenguatge formal que permet escriure les instruccions que formen un programa informàtic.
 
----
+Els primers ordinadors no es programaven amb llenguatges com Python. Inicialment s'utilitzaven instruccions molt pròximes al funcionament de la màquina i, amb el temps, aparegueren llenguatges cada vegada més comprensibles per a les persones.
 
-## 3. Contextualització i objectius del mòdul
-
-### 3.1. Introducció
-
-L'optativa **Introducció a la Programació** té com a finalitat iniciar l'alumnat en els **fonaments de la programació i la resolució de problemes**, utilitzant **Python** com a llenguatge principal.
-
-Al llarg del curs es treballarà de manera progressiva des de l'anàlisi d'un problema i el disseny d'algorismes fins al desenvolupament de programes senzills.
-
-Es treballaran els **elements bàsics del llenguatge**, les **estructures de control**, les **funcions**, les **estructures de dades** i el **tractament de fitxers**, aplicant estos coneixements en activitats i programes cada vegada més complets.
-
-L'objectiu principal no és memoritzar instruccions de Python, sinó desenvolupar la capacitat de **pensar, descompondre problemes, plantejar solucions i transformar-les en programes funcionals**.
-
-### 3.2. Objectius generals
-
-1. **Comprendre els principis bàsics de la programació**, identificant què és un programa, un llenguatge de programació i un algorisme.
-
-2. **Analitzar problemes senzills**, identificant les dades d'entrada, el procés necessari i els resultats esperats.
-
-3. **Desenvolupar programes bàsics amb Python**, utilitzant variables, tipus de dades, operadors, expressions i instruccions d'entrada i eixida.
-
-4. **Utilitzar estructures de control**, aplicant condicionals i bucles per modificar el flux d'execució dels programes.
-
-5. **Crear i utilitzar funcions**, dividint els problemes en parts més senzilles i organitzant el codi de manera modular.
-
-6. **Treballar amb estructures de dades**, especialment cadenes, llistes i diccionaris, per gestionar conjunts d'informació.
-
-7. **Llegir i escriure informació en fitxers**, permetent conservar i recuperar dades utilitzades pels programes.
-
-8. **Desenvolupar autonomia en la resolució de problemes**, interpretant errors, realitzant proves, consultant documentació i millorant progressivament les solucions proposades.
-
----
-
-## 4. Resultats d'Aprenentatge (RA) i continguts
-
-L'assignatura **Introducció a la Programació** s'estructura en **sis Resultats d'Aprenentatge (RA)**, que permeten avançar progressivament des dels conceptes bàsics de programació fins al desenvolupament d'aplicacions senzilles amb Python.
-
-### RA1. Introducció a la programació i resolució de problemes
-
-* Comprendre què significa **programar** i què és un **llenguatge de programació**.
-* Diferenciar entre **llenguatge natural i llenguatge de programació**.
-* Conéixer de manera general l'evolució i els principals tipus de llenguatges.
-* Comprendre els conceptes de **codi font, compilador i intèrpret**.
-* Analitzar problemes identificant **entrada, procés i eixida**.
-* Dissenyar **algorismes**.
-* Representar solucions mitjançant **pseudocodi i diagrames de flux**.
-* Aplicar la **descomposició de problemes** com a estratègia de resolució.
-
-### RA2. Fonaments de programació amb Python
-
-* Preparar l'entorn necessari per treballar amb **Python**.
-* Crear i executar els primers programes.
-* Utilitzar `print()` i `input()` per gestionar l'entrada i eixida d'informació.
-* Declarar i utilitzar **variables**.
-* Treballar amb els principals **tipus de dades**.
-* Realitzar **conversions de tipus**.
-* Construir expressions utilitzant **operadors aritmètics, relacionals i lògics**.
-* Utilitzar comentaris i escriure codi clar i comprensible.
-
-### RA3. Estructures de control
-
-* Utilitzar estructures condicionals amb `if`, `elif` i `else`.
-* Construir i combinar **condicions**.
-* Utilitzar el bucle `while`.
-* Utilitzar el bucle `for`.
-* Generar seqüències mitjançant `range()`.
-* Aplicar **comptadors i acumuladors**.
-* Utilitzar estructures de control niades quan siga necessari.
-* Resoldre problemes que requerisquen decisions i repeticions.
-
-### RA4. Funcions i programació modular
-
-* Comprendre la utilitat de les **funcions**.
-* Definir i cridar funcions pròpies.
-* Utilitzar **paràmetres i arguments**.
-* Retornar resultats mitjançant `return`.
-* Comprendre l'àmbit bàsic de les variables.
-* Dividir problemes complexos en **funcions més senzilles**.
-* Organitzar els programes aplicant principis bàsics de **programació modular**.
-
-### RA5. Estructures de dades
-
-* Treballar amb **cadenes de text**.
-* Crear i utilitzar **llistes**.
-* Accedir, modificar, afegir i eliminar elements.
-* Recórrer estructures de dades mitjançant bucles.
-* Realitzar cerques i operacions bàsiques sobre conjunts de dades.
-* Crear i utilitzar **diccionaris**.
-* Seleccionar l'estructura més adequada segons la informació que necessite gestionar el programa.
-
-### RA6. Fitxers i desenvolupament d'aplicacions
-
-* Comprendre la necessitat de **guardar informació de manera persistent**.
-* Obrir i tancar fitxers des de Python.
-* Llegir informació emmagatzemada en fitxers.
-* Escriure i afegir informació.
-* Treballar principalment amb **fitxers de text** i formats senzills d'intercanvi de dades.
-* Gestionar de manera bàsica possibles **errors i excepcions**.
-* Integrar variables, estructures de control, funcions, estructures de dades i fitxers.
-* Desenvolupar una **aplicació final senzilla** que integre els coneixements treballats durant el curs.
-
----
-
-> **En resum:** aprendrem a passar d'un **problema** a una **solució**, representar-la mitjançant un **algorisme** i transformar-la progressivament en un **programa funcional amb Python**.
-
-### Planificació Temporal
-
-| Bloc / Unitat | Descripció del Contingut                              |   Hores  | Trimestre         |
-| :------------ | :---------------------------------------------------- | :------: | :---------------- |
-| **UD 1**      | Introducció a la programació i resolució de problemes | **10 h** | 1r Trimestre      |
-| **UD 2**      | Fonaments de programació amb Python                   | **15 h** | 1r Trimestre      |
-| **UD 3**      | Estructures de control                                | **21 h** | 1r / 2n Trimestre |
-| **UD 4**      | Funcions i programació modular                        | **15 h** | 2n Trimestre      |
-| **UD 5**      | Estructures de dades                                  | **18 h** | 2n / 3r Trimestre |
-| **UD 6**      | Fitxers i desenvolupament d'aplicacions               | **12 h** | 3r Trimestre      |
-| **UD 7**      | Projecte final integrador                             |  **8 h** | 3r Trimestre      |
-|               | **Total aproximat**                                   | **99 h** |                   |
-
----
-
-## 5. Metodologia Didàctica
-
-L'aprenentatge de la programació serà eminentment pràctic i basat en el principi de *Learning by Doing*:
-
-1. **Classes Teoricopràctiques:** breus explicacions dels conceptes necessaris, acompanyades d'exemples i demostracions de codi en directe (*Live Coding*).
-
-2. **Reptes i Tallers d'Aula:** resolució d'exercicis curts, problemes i reptes de dificultat progressiva, de manera individual o en parelles.
-
-3. **Aprenentatge Basat en Projectes (ABP):** desenvolupament de programes i activitats pràctiques que integren progressivament els continguts treballats.
-
-4. **Resolució de Problemes:** abans de programar, s'identificaran les dades d'entrada, el procés i l'eixida, dissenyant quan siga necessari l'algorisme corresponent.
-
-La metodologia evolucionarà progressivament des d'activitats **més guiades** al principi del curs fins a activitats amb **major autonomia**.
-
-L'ús d'Internet i d'eines d'**Intel·ligència Artificial** estarà permés quan forme part de l'activitat, però l'alumnat haurà de ser capaç de **comprendre, explicar i modificar les solucions que presente**.
-
----
-
-## 6. Criteris d'Avaluació i Qualificació
-
-L'avaluació és contínua, formativa i integradora. Cada Resultat d'Aprenentatge (RA) té associades activitats i proves que permeten valorar el grau d'assoliment dels continguts i competències treballats.
-
-### 6.1. Ponderació General per Trimestre
+De manera simplificada:
 
 ```text
-┌──────────────────────────────────────────────────────────────────────────┐
-│                         DISTRIBUCIÓ DE LA NOTA                           │
-├──────────────────────────────────┬───────────────────────────────────────┤
-│ Activitats i Pràctiques          │ 30% (Reptes, activitats i programes)  │
-│ Proves Individuals               │ 70% (Proves teòriques/pràctiques)     │
-└──────────────────────────────────┴───────────────────────────────────────┘
+LLENGUATGE MÀQUINA
+        ↓
+   ASSEMBLADOR
+        ↓
+LLENGUATGES D'ALT NIVELL
+        ↓
+ C · C++ · JAVA · PYTHON...
 ```
 
-### 6.2. Condicions de Superació del Mòdul
+La vostra primera missió serà descobrir **com hem arribat fins als llenguatges actuals**.
 
-* Hi ha **dues convocatòries** per curs escolar.
+## Què heu de fer?
 
-* **Nota mínima en proves individuals:** per a fer mitjana amb la resta d'apartats, cal obtindre una qualificació mínima de **5,0 sobre 10** en les proves individuals.
+Creeu una **línia del temps visual** sobre l'evolució dels llenguatges de programació.
 
-* **Lliurament de pràctiques:** és obligatori haver lliurat almenys el **80% de les pràctiques obligatòries** proposades a *Aules* dins del termini establit.
+Ha d'incloure com a mínim:
 
-* **Superació dels RA:** cada Resultat d'Aprenentatge haurà d'assolir-se amb una nota mínima ponderada de **5,0**.
+* Llenguatge màquina
+* Assemblador
+* FORTRAN
+* COBOL
+* C
+* C++
+* Python
+* Java
+* JavaScript
 
-* **Còpia i plagi:** l'ús de codi d'altres companys o de contingut generat mitjançant Intel·ligència Artificial sense autorització, sense comprendre'l o sense poder explicar-lo podrà comportar una qualificació de **0** en l'activitat corresponent.
+Podeu afegir altres llenguatges si considereu que han sigut importants.
 
-### 6.3. Recuperacions
+### De cada fita heu d'investigar
 
-* Al final de cada trimestre es realitzarà una sessió de recuperació dels RA no assolits.
+* Any aproximat d'aparició.
+* Creador o creadors.
+* Per què va aparéixer o quin problema intentava resoldre.
+* Principal ús.
+* Una aportació o característica important.
 
-* A final de curs es disposarà d'una **Convocatòria Extraordinària Final** per recuperar aquells RA que continuen pendents.
+No volem nou definicions independents. La línia del temps ha de permetre observar **com ha evolucionat la programació**.
+
+### Condicions
+
+* Màxim **30 paraules de text explicatiu per llenguatge**.
+* La informació ha d'estar resumida amb les vostres paraules.
+* Utilitzeu imatges, icones, connexions o altres recursos visuals quan aporten informació.
+* La informació ha de poder llegir-se i entendre's amb facilitat.
+
+### Producte final
+
+Una **línia del temps visual digital**.
+
+Podeu utilitzar Canva, Genially, TimelineJS o una ferramenta equivalent.
+
+Al final incloureu una breu conclusió:
+
+> **Quins tres canvis considereu més importants en l'evolució dels llenguatges de programació? Per què?**
+
+Màxim **100 paraules**.
+
+---
+
+# MISSIÓ 2 — EL MAPA DELS LLENGUATGES
+
+## Què necessitem saber?
+
+No tots els llenguatges de programació són iguals.
+
+Segons la seua proximitat al maquinari podem parlar, de manera general, de **llenguatges de baix nivell** i **llenguatges d'alt nivell**.
+
+El programa que escriu una persona s'anomena **codi font**, però el processador necessita instruccions que puga executar. Per això intervenen mecanismes com els **compiladors** i els **intèrprets**.
+
+També existeixen diferents maneres d'organitzar els programes, anomenades **paradigmes de programació**, com la programació procedimental, l'orientada a objectes o la funcional.
+
+Python és un llenguatge d'alt nivell que permet treballar amb diferents paradigmes.
+
+Ara heu de descobrir **com encaixen totes estes peces**.
+
+## Què heu de fer?
+
+Construïu un **mapa conceptual** que relacione, com a mínim:
+
+* llenguatge màquina;
+* assemblador;
+* llenguatges de baix nivell;
+* llenguatges d'alt nivell;
+* codi font;
+* codi màquina;
+* compilador;
+* intèrpret;
+* llenguatges compilats;
+* llenguatges interpretats;
+* programació procedimental;
+* programació orientada a objectes;
+* programació funcional;
+* Python.
+
+### Important
+
+No heu de crear un diccionari de definicions.
+
+El més important són les **relacions entre els conceptes**.
+
+Les connexions han de tindre significat:
+
+```text
+és un...
+pertany a...
+permet...
+es transforma mitjançant...
+s'executa mitjançant...
+genera...
+```
+
+Per exemple:
+
+```text
+                         PYTHON
+                            │
+               ┌────────────┴────────────┐
+               │                         │
+             és un                    permet
+               │                         │
+               ▼                         ▼
+      LLENGUATGE D'ALT NIVELL      DIFERENTS PARADIGMES
+```
+
+### Producte final
+
+Un **mapa conceptual digital** en una única pàgina o espai de treball.
+
+Podeu utilitzar diagrams.net, Excalidraw, Canva, Miro, Genially o una ferramenta equivalent.
+
+No utilitzeu paràgrafs llargs. Utilitzeu **conceptes, paraules clau i connexions**.
+
+### Comprovació
+
+El professor podrà seleccionar qualsevol membre del grup perquè explique durant aproximadament **2 minuts** una part del mapa.
+
+No cal memoritzar definicions: heu de ser capaços d'explicar **per què heu relacionat els conceptes d'eixa manera**.
 
 ---
 
-## 7. Eines i Recursos de Treball
+# MISSIÓ 3 — TU ERES L'ORDINADOR
 
-Totes les eines utilitzades a classe seran preferentment gratuïtes, de codi obert i multiplataforma:
+## Què necessitem saber?
 
-* **Sistemes Operatius:** GNU/Linux (Ubuntu / Debian / LliureX).
+Abans d'escriure codi necessitem saber **com resoldre el problema**.
 
-* **Llenguatge de programació:** Python 3.
+Un **algorisme** és una seqüència finita, ordenada i precisa de passos que permet resoldre un problema.
 
-* **Entorn de desenvolupament:** Visual Studio Code o equivalent.
+Un bon algorisme ha de ser:
 
-* **Representació d'algorismes:** diagrams.net, Excalidraw o eines equivalents.
+* **ordenat**, perquè els passos segueixen una seqüència;
+* **finit**, perquè ha d'acabar;
+* **precís**, perquè cada instrucció indica què s'ha de fer;
+* **no ambigu**, perquè una mateixa instrucció no hauria de permetre diferents interpretacions.
 
-* **Creació de continguts visuals:** Canva, Genially o eines equivalents quan l'activitat ho requerisca.
+Les persones interpretem contínuament informació que no està escrita.
 
-* **Plataforma d'Aprenentatge Virtual:** Aules.
+Un ordinador no ho farà.
 
-* **Apunts i recursos de classe:** GitHub Pages.
+Ho comprovarem.
 
-* **Intel·ligència Artificial:** eines generatives com a suport per a la consulta, investigació, revisió i resolució de dubtes quan estiga autoritzat el seu ús.
+## Organització
+
+Treballareu en grups de **3 persones**.
+
+Cada membre assumirà inicialment un paper:
+
+### PROGRAMADOR
+
+Escriu les instruccions.
+
+### ORDINADOR
+
+Executa les instruccions **literalment**.
+
+No pot corregir, interpretar ni completar passos que no estiguen escrits.
+
+### DEBUGGER
+
+Observa l'execució i registra els problemes.
+
+## El repte
+
+Cada grup rebrà una tasca quotidiana.
+
+Per exemple:
+
+* preparar un entrepà;
+* enviar un missatge amb el mòbil;
+* connectar-se a una xarxa Wi-Fi;
+* traure diners d'un caixer;
+* instal·lar una aplicació;
+* preparar la motxilla per anar a classe.
+
+### Primera fase — Programar
+
+Escriviu una primera versió de l'algorisme.
+
+No intenteu corregir-lo mentre s'està executant.
+
+### Segona fase — Executar
+
+L'alumne que representa l'ordinador intentarà seguir **exactament** les instruccions.
+
+### Tercera fase — Depurar
+
+El debugger registrarà els problemes detectats.
+
+Utilitzeu una taula semblant a esta:
+
+| Pas | Instrucció  | Què ha fet l'ordinador | Problema detectat              |
+| --- | ----------- | ---------------------- | ------------------------------ |
+| 1   | Agafa el pa | Agafa tota la bossa    | No s'ha especificat quina peça |
+| 2   | ...         | ...                    | ...                            |
+
+### Quarta fase — Corregir
+
+Reescriviu l'algorisme solucionant els problemes detectats.
+
+## Producte final
+
+Entregareu un únic document amb:
+
+1. **Algorisme inicial.**
+2. **Taula d'errors detectats.**
+3. **Algorisme corregit.**
+4. **Diagrama de flux de la solució final.**
+
+No elimineu la primera versió encara que continga molts errors.
+
+> **Els errors formen part del producte:** volem observar com heu millorat la solució després de provar-la.
 
 ---
 
-## 8. Normes de Convivència
+# MISSIÓ 4 — DEL PROBLEMA A LA SOLUCIÓ
 
-Per a garantir un entorn òptim de treball a l'aula d'informàtica:
+## Què necessitem saber?
 
-1. **Begudes i Menjar:** prohibit introduir begudes o aliments a les taules dels equips informàtics.
+La major part dels programes parteixen d'un problema.
 
-2. **Manteniment:** respectar la configuració del maquinari i del programari dels equips. En finalitzar la sessió, el lloc de treball haurà de quedar correctament ordenat.
+Abans de començar a escriure Python, aprendrem a identificar tres elements:
 
-3. **Còpies de Seguretat:** l'alumnat és responsable de conservar còpies dels seus programes, activitats i projectes.
+```text
+ENTRADA → PROCÉS → EIXIDA
+```
 
-4. **Puntualitat:** l'entrada a l'aula s'efectuarà puntualment per no interrompre la dinàmica de treball.
+**Entrada:** dades que necessita el programa.
 
-5. **Mòbils:** només es podran utilitzar quan el professor n'autoritze l'ús com a part d'una activitat educativa.
+**Procés:** operacions que realitzarem amb les dades.
+
+**Eixida:** resultat que volem obtindre.
+
+Per exemple:
+
+> Calcular la mitjana de tres notes.
+
+```text
+ENTRADA
+nota1, nota2, nota3
+
+        ↓
+
+PROCÉS
+(nota1 + nota2 + nota3) / 3
+
+        ↓
+
+EIXIDA
+mitjana
+```
+
+Podem representar després la solució mitjançant un **algorisme**, **pseudocodi** i un **diagrama de flux**.
+
+Esta missió serà la més important del RA perquè és el pas immediatament anterior a començar a programar amb Python.
+
+## El problema
+
+Cada grup rebrà un problema diferent.
+
+Per exemple:
+
+* calcular la mitjana de diverses notes;
+* calcular el preu final d'un producte amb descompte;
+* repartir el compte d'un sopar;
+* convertir temperatures;
+* calcular el cost d'un viatge;
+* calcular el cost d'omplir un depòsit.
+
+> **No podeu començar a programar en Python.**
+
+Primer heu de demostrar que sabeu resoldre el problema.
+
+## Què heu de fer?
+
+Analitzeu el problema i determineu:
+
+### 1. Problema
+
+Què ens estan demanant?
+
+### 2. Entrada
+
+Quines dades necessitem?
+
+### 3. Eixida
+
+Quin resultat hem d'obtindre?
+
+### 4. Procés
+
+Quines operacions necessitem realitzar?
+
+### 5. Algorisme
+
+Quins passos seguiríem i en quin ordre?
+
+### 6. Pseudocodi
+
+Representeu la solució utilitzant pseudocodi.
+
+### 7. Diagrama de flux
+
+Representeu gràficament la mateixa solució.
+
+### 8. Cas de prova
+
+Comproveu que la vostra solució funciona utilitzant dades concretes.
+
+Per exemple:
+
+```text
+PROBLEMA
+Repartir un compte entre diverses persones.
+
+ENTRADA
+Total = 84 €
+Persones = 4
+
+RESULTAT ESPERAT
+21 € per persona
+```
+
+## Producte final
+
+Creareu una **infografia tècnica** en una única pàgina.
+
+Ha de permetre seguir visualment tot el procés:
+
+```text
+PROBLEMA
+   ↓
+ENTRADES
+   ↓
+PROCÉS
+   ↓
+EIXIDA
+   ↓
+ALGORISME
+   ↓
+PSEUDOCODI
+   ↓
+DIAGRAMA DE FLUX
+   ↓
+CAS DE PROVA
+```
+
+No es valorarà que la infografia tinga molta decoració.
+
+Es valorarà que **una altra persona puga entendre perfectament la vostra solució només observant el producte**.
+
+> **Guardeu esta missió.** En el RA2 recuperarem alguns d'estos problemes i convertirem la solució en un programa real escrit en Python.
 
 ---
+
+# MISSIÓ 5 — PYTHON CONTRA EL MÓN
+
+## Què necessitem saber?
+
+Existeixen centenars de llenguatges de programació i no existeix un llenguatge perfecte per a totes les situacions.
+
+Durant el curs utilitzarem **Python**.
+
+Python és un llenguatge d'alt nivell, de propòsit general i multiparadigma, amb una sintaxi relativament clara.
+
+Per exemple:
+
+```python
+nom = input("Com et dius? ")
+print("Hola", nom)
+```
+
+S'utilitza en àmbits molt diferents:
+
+* automatització;
+* administració de sistemes;
+* desenvolupament web;
+* dades;
+* intel·ligència artificial;
+* ciberseguretat;
+* ciència.
+
+Però altres llenguatges poden resultar més adequats en altres situacions.
+
+La missió final serà comprovar-ho.
+
+## Què heu de fer?
+
+Cada grup compararà **Python amb un altre llenguatge**.
+
+Per exemple:
+
+* Python vs Java
+* Python vs C
+* Python vs C++
+* Python vs JavaScript
+* Python vs C#
+
+## Producte final
+
+Creareu una **fitxa comparativa visual**.
+
+Ha d'incloure com a mínim:
+
+| Característica         | Python | Altre llenguatge |
+| ---------------------- | ------ | ---------------- |
+| Any d'aparició         |        |                  |
+| Creador                |        |                  |
+| Tipus / nivell         |        |                  |
+| Forma d'execució       |        |                  |
+| Facilitat inicial      |        |                  |
+| Llegibilitat           |        |                  |
+| Principals usos        |        |                  |
+| Avantatge principal    |        |                  |
+| Inconvenient principal |        |                  |
+
+## El mateix problema, dos llenguatges
+
+Incloeu també el codi necessari en els dos llenguatges per realitzar una mateixa tasca senzilla:
+
+> **Demanar el nom d'una persona i mostrar una salutació.**
+
+Situeu els dos fragments de codi **un al costat de l'altre** i compareu-los.
+
+No és necessari que sapieu programar encara en cap dels dos llenguatges. Investigueu com es realitza i intenteu comprendre les diferències que observeu.
+
+## Veredicte final
+
+Responeu:
+
+> **Si haguérem d'ensenyar a programar a una persona que mai ha programat, quin dels dos llenguatges elegiríeu? Per què?**
+
+Màxim **50 paraules**.
+
+I també:
+
+> **En quina situació podria resultar més adequat l'altre llenguatge?**
+
+Màxim **50 paraules**.
+
+No heu de demostrar que Python és millor.
+
+Heu de **comparar i justificar la vostra decisió**.
+
+---
+
+# ÚS D'INTERNET I INTEL·LIGÈNCIA ARTIFICIAL
+
+Durant les cinc missions podeu utilitzar **Internet i eines d'Intel·ligència Artificial**.
+
+Podeu utilitzar-les per:
+
+* buscar informació;
+* entendre conceptes;
+* consultar exemples;
+* comparar fonts;
+* resoldre dubtes;
+* revisar el vostre treball.
+
+Però **copiar una resposta no significa haver resolt una missió**.
+
+El procés ha de ser:
+
+```text
+BUSCAR
+   ↓
+COMPRENDRE
+   ↓
+COMPROVAR
+   ↓
+SELECCIONAR
+   ↓
+RELACIONAR
+   ↓
+CREAR
+```
+
+Qualsevol membre del grup ha de ser capaç d'explicar el contingut que heu entregat.
+
+El professor podrà preguntar:
+
+> Per què heu posat açò?
+
+> Què significa este concepte?
+
+> Per què heu relacionat estos dos elements?
+
+> Com heu arribat a esta solució?
+
+> Què canviaria si modificàrem esta dada?
+
+Si no podeu explicar una informació o una solució que apareix en el vostre treball, **no heu demostrat que l'enteneu**.
+
+---
+
+# QUÈ ENTREGAREM?
+
+Al final del RA haureu completat cinc productes diferents:
+
+| Missió                           | Producte final                                             |
+| -------------------------------- | ---------------------------------------------------------- |
+| **1. La màquina del temps**      | Línia del temps visual sobre l'evolució dels llenguatges   |
+| **2. El mapa dels llenguatges**  | Mapa conceptual de tipus, execució i paradigmes            |
+| **3. Tu eres l'ordinador**       | Algorisme inicial + errors + algorisme corregit + diagrama |
+| **4. Del problema a la solució** | Infografia tècnica completa + cas de prova                 |
+| **5. Python contra el món**      | Comparativa visual entre Python i un altre llenguatge      |
+
+Els productes s'entregaran en **Aules** en el format indicat pel professor.
+
+---
+
+# QUÈ S'AVALUARÀ?
+
+No s'avaluarà la quantitat de text ni la decoració del treball.
+
+Es valorarà principalment:
+
+* la **correcció dels conceptes**;
+* la capacitat per **seleccionar la informació important**;
+* la capacitat per **relacionar conceptes**;
+* la representació clara i visual de la informació;
+* la capacitat per **analitzar i resoldre problemes**;
+* la correcció dels algorismes, pseudocodi i diagrames;
+* la capacitat per detectar i corregir errors;
+* la justificació de les decisions;
+* la capacitat per **explicar el treball realitzat**.
+
+La **Missió 4 — Del problema a la solució** tindrà especial importància, ja que comprova si sou capaços de realitzar el procés que utilitzarem durant la resta del curs:
+
+```text
+PROBLEMA
+   ↓
+ANÀLISI
+   ↓
+ALGORISME
+   ↓
+PROGRAMA
+```
+
+---
+
+# TEMPORALITZACIÓ
+
+El treball es desenvoluparà durant un màxim de **8 sessions de classe**.
+
+| Sessió | Treball previst                                      |
+| ------ | ---------------------------------------------------- |
+| **1**  | Conceptes inicials + Missió 1                        |
+| **2**  | Finalització Missió 1 + conceptes i inici Missió 2   |
+| **3**  | Finalització Missió 2 + algorismes i inici Missió 3  |
+| **4**  | Missió 3: execució, depuració i correcció            |
+| **5**  | Pseudocodi, diagrames i inici Missió 4               |
+| **6**  | Desenvolupament i finalització Missió 4              |
+| **7**  | Introducció a Python + Missió 5                      |
+| **8**  | Finalització Missió 5 + posada en comú i conclusions |
+
+Les missions s'aniran obrint **progressivament**.
+
+No començareu una missió fins que hàgem treballat a classe els conceptes necessaris.
+
+---
+
+# I DESPRÉS?
+
+Quan acabe este RA haureu aprés a passar d'un problema a una possible solució:
+
+```text
+PROBLEMA → ALGORISME
+```
+
+En el següent RA afegirem la peça que ens falta:
+
+```text
+PROBLEMA → ALGORISME → PYTHON
+```
+
+I començarem a escriure els nostres **primers programes reals**.
