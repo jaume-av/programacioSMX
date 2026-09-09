@@ -11,6 +11,9 @@ nav_order: 1
 
 <img src="logo.png" alt="Logo IES Benigasló" width="220"/>
 
+</div>
+
+
 # GUIA DOCENT
 
 **IES Benigasló (La Vall d'Uixó)**
@@ -19,7 +22,7 @@ nav_order: 1
 
 *Conselleria d'Educació, Cultura, Universitats i Ocupació — Generalitat Valenciana*
 
-</div>
+
 
 ---
 
