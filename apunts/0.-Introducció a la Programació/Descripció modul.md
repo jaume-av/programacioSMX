@@ -97,87 +97,136 @@ Al final incloureu una breu conclusió:
 Màxim **100 paraules**.
 
 ---
-
-# MISSIÓ 2 — EL MAPA DELS LLENGUATGES
+# MISSIÓ 2 — CLASSIFIQUEM ELS LLENGUATGES
 
 ## Què necessitem saber?
 
-No tots els llenguatges de programació són iguals.
+Els llenguatges de programació es poden classificar segons diferents característiques.
 
-Segons la seua proximitat al maquinari podem parlar, de manera general, de **llenguatges de baix nivell** i **llenguatges d'alt nivell**.
+### Segons el nivell
 
-El programa que escriu una persona s'anomena **codi font**, però el processador necessita instruccions que puga executar. Per això intervenen mecanismes com els **compiladors** i els **intèrprets**.
+* **Baix nivell:** llenguatges pròxims al funcionament del maquinari. El llenguatge màquina i l'assemblador en són exemples.
+* **Alt nivell:** llenguatges més pròxims a la manera d'expressar-se de les persones i més independents del maquinari.
 
-També existeixen diferents maneres d'organitzar els programes, anomenades **paradigmes de programació**, com la programació procedimental, l'orientada a objectes o la funcional.
+### Segons com s'executen
 
-Python és un llenguatge d'alt nivell que permet treballar amb diferents paradigmes.
+El programa escrit pel programador és el **codi font**. Per executar-lo, l'ordinador necessita transformar o interpretar eixes instruccions.
 
-Ara heu de descobrir **com encaixen totes estes peces**.
+* **Compilador:** tradueix el codi font abans de l'execució.
+* **Intèrpret:** interpreta i executa les instruccions del programa durant l'execució.
+
+Això permet parlar, de manera general, de **llenguatges compilats** i **llenguatges interpretats**. Alguns llenguatges utilitzen sistemes intermedis o combinen diferents mecanismes.
+
+### Segons el paradigma
+
+Un paradigma és una manera d'organitzar i construir els programes.
+
+Treballarem principalment amb:
+
+* **Procedimental:** organitza el programa mitjançant instruccions, procediments i funcions.
+* **Orientat a objectes:** organitza el programa mitjançant objectes que agrupen dades i comportaments.
+* **Funcional:** basa la construcció de les solucions principalment en l'ús de funcions.
+
+Un llenguatge pot permetre **més d'un paradigma**.
+
+---
 
 ## Què heu de fer?
 
-Construïu un **mapa conceptual** que relacione, com a mínim:
+Investigueu i classifiqueu els següents llenguatges:
 
-* llenguatge màquina;
-* assemblador;
-* llenguatges de baix nivell;
-* llenguatges d'alt nivell;
-* codi font;
-* codi màquina;
-* compilador;
-* intèrpret;
-* llenguatges compilats;
-* llenguatges interpretats;
-* programació procedimental;
-* programació orientada a objectes;
-* programació funcional;
-* Python.
+**Llenguatge màquina · Assemblador · FORTRAN · COBOL · C · C++ · Java · C# · JavaScript · Python · PHP · Ruby · Go · Rust · Kotlin · Swift · TypeScript · Haskell**
 
-### Important
-
-No heu de crear un diccionari de definicions.
-
-El més important són les **relacions entre els conceptes**.
-
-Les connexions han de tindre significat:
-
-```text
-és un...
-pertany a...
-permet...
-es transforma mitjançant...
-s'executa mitjançant...
-genera...
-```
-
-Per exemple:
-
-```text
-                         PYTHON
-                            │
-               ┌────────────┴────────────┐
-               │                         │
-             és un                    permet
-               │                         │
-               ▼                         ▼
-      LLENGUATGE D'ALT NIVELL      DIFERENTS PARADIGMES
-```
-
-### Producte final
-
-Un **mapa conceptual digital** en una única pàgina o espai de treball.
-
-Podeu utilitzar diagrams.net, Excalidraw, Canva, Miro, Genially o una ferramenta equivalent.
-
-No utilitzeu paràgrafs llargs. Utilitzeu **conceptes, paraules clau i connexions**.
-
-### Comprovació
-
-El professor podrà seleccionar qualsevol membre del grup perquè explique durant aproximadament **2 minuts** una part del mapa.
-
-No cal memoritzar definicions: heu de ser capaços d'explicar **per què heu relacionat els conceptes d'eixa manera**.
+No heu de fer una fitxa completa de cada llenguatge. Busqueu únicament la informació necessària per poder **classificar-lo i justificar la classificació**.
 
 ---
+
+## 1. Classificació segons el nivell
+
+Creeu dos grups:
+
+```text
+BAIX NIVELL                 ALT NIVELL
+```
+
+Col·loqueu els 18 llenguatges en el grup corresponent.
+
+Si considereu que algun cas necessita una explicació, afegiu una nota breu.
+
+---
+
+## 2. Classificació segons l'execució
+
+Creeu dos grups:
+
+```text
+COMPILATS                   INTERPRETATS
+```
+
+Classifiqueu els llenguatges segons la forma habitual en què s'executen.
+
+A més, representeu de manera senzilla els dos processos:
+
+```text
+CODI FONT → COMPILADOR → __________ → EXECUCIÓ
+
+CODI FONT → INTÈRPRET → __________
+```
+
+Completeu els espais després d'investigar el procés.
+
+**Important:** si un llenguatge utilitza un sistema intermedi, una màquina virtual o no encaixa exactament en la divisió compilat/interpretat, indiqueu-ho amb una nota breu. **No forceu un llenguatge dins d'una categoria si la realitat és diferent.**
+
+---
+
+## 3. Classificació segons el paradigma
+
+Creeu tres grups:
+
+```text
+PROCEDIMENTAL     ORIENTAT A OBJECTES     FUNCIONAL
+```
+
+Classifiqueu els llenguatges segons els paradigmes que permeten utilitzar.
+
+En esta classificació, **un mateix llenguatge pot aparéixer en més d'un grup**.
+
+---
+
+## 4. Destaquem Python
+
+Una vegada completades les classificacions, destaqueu **Python** i completeu:
+
+| Característica   | Python |
+| ---------------- | ------ |
+| Nivell           |        |
+| Forma d'execució |        |
+| Paradigmes       |        |
+| Justificació     |        |
+
+La justificació ha de ser breu i escrita amb les vostres paraules.
+
+---
+
+## Producte final
+
+Entregareu **un tauler digital de classificació** en una única pàgina o espai de treball.
+
+Ha de contindre:
+
+* els **18 llenguatges**;
+* classificació segons **baix nivell / alt nivell**;
+* classificació segons **compilats / interpretats**, indicant els casos especials;
+* esquema **codi font → compilador/intèrpret → execució**;
+* classificació segons **procedimental / orientat a objectes / funcional**;
+* fitxa final de **Python**.
+
+Cada llenguatge es pot representar mitjançant una **targeta amb el seu nom i logotip**, que col·locareu en les diferents classificacions.
+
+Podeu utilitzar **diagrams.net, Excalidraw, Canva, Genially** o una ferramenta equivalent.
+
+---
+
 
 # MISSIÓ 3 — TU ERES L'ORDINADOR
 
