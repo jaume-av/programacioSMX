@@ -365,6 +365,9 @@ Podem representar després la solució mitjançant un **algorisme**, **pseudocod
 
 Esta missió serà la més important del RA perquè és el pas immediatament anterior a començar a programar amb Python.
 
+[Diagrama de Flux i Pseudocodi](diagramaipseudo.html)
+
+
 ## El problema
 
 Cada grup rebrà un problema diferent.

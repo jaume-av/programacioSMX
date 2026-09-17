@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cheat Sheets — Pseudocodi i Diagrames de Flux</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #1f2937;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0b4f84, #0d6ba8);
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: 2.3rem;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px 60px;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 35px;
+    }
+
+    .intro h2 {
+      color: #0b4f84;
+      margin-bottom: 8px;
+    }
+
+    .intro p {
+      margin: 0;
+      color: #4b5563;
+    }
+
+    .recursos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      align-items: start;
+    }
+
+    .recurs {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+    }
+
+    .recurs h2 {
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      background: #eaf5fc;
+      color: #0b4f84;
+      font-size: 1.5rem;
+    }
+
+    .imatge {
+      padding: 18px;
+      background: #ffffff;
+    }
+
+    .imatge img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .accions {
+      padding: 0 18px 22px;
+      text-align: center;
+    }
+
+    .boto {
+      display: inline-block;
+      padding: 11px 20px;
+      background: #0b4f84;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .boto:hover {
+      background: #083b63;
+      transform: translateY(-2px);
+    }
+
+    .recordatori {
+      margin-top: 40px;
+      padding: 22px 25px;
+      background: #fff8db;
+      border-left: 5px solid #f2c94c;
+      border-radius: 10px;
+    }
+
+    .recordatori strong {
+      color: #0b4f84;
+    }
+
+    footer {
+      background: #0b4f84;
+      color: white;
+      text-align: center;
+      padding: 18px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 800px) {
+      .recursos {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      main {
+        padding: 25px 15px 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Pseudocodi i Diagrames de Flux</h1>
+    <p>Cheat sheets per ajudar-te a dissenyar una solució abans de programar-la</p>
+  </header>
+
+  <main>
+
+    <section class="intro">
+      <h2>Material de consulta</h2>
+      <p>
+        Utilitza aquestes dues guies durant la Missió 4 per preparar
+        el pseudocodi i el diagrama de flux de la teua solució.
+      </p>
+    </section>
+
+    <section class="recursos">
+
+      <!-- PSEUDOCODI -->
+      <article class="recurs">
+
+        <h2>Cheat Sheet — Pseudocodi</h2>
+
+        <div class="imatge">
+          <a href="SolucionsRA1/pseudocodi.png" target="_blank">
+            <img
+              src="SolucionsRA1/pseudocodi.png"
+              alt="Cheat Sheet de pseudocodi">
+          </a>
+        </div>
+
+        <div class="accions">
+          <a
+            class="boto"
+            href="SolucionsRA1/pseudocodi.png"
+            target="_blank">
+            Veure en gran
+          </a>
+        </div>
+
+      </article>
+
+
+      <!-- DIAGRAMA DE FLUX -->
+      <article class="recurs">
+
+        <h2>Cheat Sheet — Diagrames de Flux</h2>
+
+        <div class="imatge">
+          <a href="SolucionsRA1/diagrama.png" target="_blank">
+            <img
+              src="SolucionsRA1/diagrama.png"
+              alt="Cheat Sheet de diagrames de flux">
+          </a>
+        </div>
+
+        <div class="accions">
+          <a
+            class="boto"
+            href="SolucionsRA1/diagrama.png"
+            target="_blank">
+            Veure en gran
+          </a>
+        </div>
+
+      </article>
+
+    </section>
+
+    <section class="recordatori">
+      <strong>Recorda:</strong>
+      primer resol el problema, després escriu el pseudocodi
+      i finalment representa la mateixa solució amb un diagrama de flux.
+    </section>
+
+  </main>
+
+  <footer>
+    Introducció a la Programació — 2n SMX
+  </footer>
+
+</body>
+</html>
