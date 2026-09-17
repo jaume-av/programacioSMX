@@ -320,6 +320,8 @@ No elimineu la primera versió encara que continga molts errors.
 
 > **Els errors formen part del producte:** volem observar com heu millorat la solució després de provar-la.
 
+
+[Exemple Entrepa](SolucionsRA1/missio3.html)
 ---
 
 # MISSIÓ 4 — DEL PROBLEMA A LA SOLUCIÓ

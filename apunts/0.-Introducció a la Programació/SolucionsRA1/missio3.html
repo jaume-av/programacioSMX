@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Missió 3 — Exemple pràctic: preparar un entrepà</title>
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --secondary: #eff6ff;
+      --accent: #f59e0b;
+      --success: #16a34a;
+      --danger: #dc2626;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --border: #d1d5db;
+      --background: #f8fafc;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 24px 70px;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+      color: white;
+      padding: 45px 30px;
+      border-radius: 16px;
+      margin-bottom: 35px;
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    section {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    h2 {
+      color: var(--primary-dark);
+      margin-top: 0;
+      border-bottom: 2px solid var(--secondary);
+      padding-bottom: 10px;
+    }
+
+    h3 {
+      color: var(--primary);
+      margin-top: 25px;
+    }
+
+    .role {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .algorithm {
+      background: #f8fafc;
+      border-left: 5px solid var(--primary);
+      padding: 18px 24px;
+      border-radius: 8px;
+    }
+
+    .algorithm ol {
+      margin: 0;
+      padding-left: 25px;
+    }
+
+    .algorithm li {
+      margin: 8px 0;
+    }
+
+    .instruction {
+      background: var(--secondary);
+      border-left: 5px solid var(--primary);
+      padding: 18px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    .instruction blockquote {
+      margin: 8px 0 12px;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .why {
+      color: var(--muted);
+    }
+
+    .important {
+      background: #fff7ed;
+      border-left: 5px solid var(--accent);
+      padding: 18px;
+      margin: 20px 0;
+      border-radius: 8px;
+    }
+
+    .rule {
+      background: #fef2f2;
+      border-left: 5px solid var(--danger);
+      padding: 18px;
+      margin: 20px 0;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .learned {
+      background: #f0fdf4;
+      border-left: 5px solid var(--success);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th,
+    td {
+      border: 1px solid var(--border);
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: var(--primary-dark);
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    .roles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .role-card {
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .role-card strong {
+      display: block;
+      color: var(--primary-dark);
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .tasks {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 25px;
+    }
+
+    .tasks li {
+      margin: 5px 0;
+    }
+
+    .final-product {
+      background: var(--primary-dark);
+      color: white;
+    }
+
+    .final-product h2 {
+      color: white;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .product-step {
+      background: rgba(255, 255, 255, 0.12);
+      padding: 15px 18px;
+      border-radius: 8px;
+      margin: 8px 0;
+      font-weight: bold;
+    }
+
+    .arrow {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .final-note {
+      background: white;
+      color: var(--text);
+      padding: 18px;
+      border-radius: 8px;
+      margin-top: 25px;
+    }
+
+    blockquote {
+      margin-left: 0;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        padding: 20px 12px 40px;
+      }
+
+      header {
+        padding: 30px 20px;
+      }
+
+      header h1 {
+        font-size: 1.7rem;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      .roles-grid,
+      .tasks {
+        grid-template-columns: 1fr;
+      }
+
+      table {
+        font-size: 0.9rem;
+      }
+
+      .table-wrapper {
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="container">
+
+    <header>
+      <h1>MISSIÓ 3 — Exemple pràctic: preparar un entrepà</h1>
+      <p>Imagineu que sou un equip de 3 persones i la vostra missió és preparar un entrepà.</p>
+    </header>
+
+
+    <!-- ALUMNE 1 -->
+
+    <section>
+
+      <span class="role">ALUMNE 1</span>
+      <h2>PROGRAMADOR</h2>
+
+      <p>El programador ha d’escriure les instruccions.</p>
+
+      <h3>Algorisme inicial</h3>
+
+      <div class="algorithm">
+        <ol>
+          <li>Agafa el pa.</li>
+          <li>Obri el pa.</li>
+          <li>Posa pernil.</li>
+          <li>Posa formatge.</li>
+          <li>Tanca l’entrepà.</li>
+        </ol>
+      </div>
+
+      <div class="important">
+        <strong>Atenció:</strong> encara no intentem que siga perfecte.
+        Aquesta és la primera versió.
+      </div>
+
+    </section>
+
+
+    <!-- ALUMNE 2 -->
+
+    <section>
+
+      <span class="role">ALUMNE 2</span>
+      <h2>ORDINADOR</h2>
+
+      <p>Ara l’ordinador ha d’executar les instruccions.</p>
+
+      <p>Però hi ha una norma molt important:</p>
+
+      <div class="rule">
+        L’ordinador només pot fer exactament el que diu la instrucció.
+      </div>
+
+      <p>No pot imaginar què volíem dir.</p>
+
+      <h3>Executem el programa</h3>
+
+
+      <div class="instruction">
+        <strong>Instrucció 1:</strong>
+
+        <blockquote>“Agafa el pa.”</blockquote>
+
+        <p>L’ordinador agafa <strong>tota la bossa de pa</strong>.</p>
+
+        <p class="why">
+          <strong>Per què?</strong><br>
+          Perquè no hem especificat quina peça de pa ha d’agafar.
+        </p>
+      </div>
+
+
+      <div class="instruction">
+        <strong>Instrucció 2:</strong>
+
+        <blockquote>“Obri el pa.”</blockquote>
+
+        <p>L’ordinador intenta obrir <strong>la bossa de pa</strong>.</p>
+
+        <p class="why">
+          <strong>Per què?</strong><br>
+          Perquè això és el que té a les mans.
+        </p>
+      </div>
+
+
+      <div class="instruction">
+        <strong>Instrucció 3:</strong>
+
+        <blockquote>“Posa pernil.”</blockquote>
+
+        <p>
+          L’ordinador agafa <strong>tot el paquet de pernil</strong>
+          i el posa damunt del pa.
+        </p>
+
+        <p class="why">
+          <strong>Per què?</strong><br>
+          Perquè no hem dit quina quantitat de pernil volem.
+        </p>
+      </div>
+
+
+      <div class="instruction">
+        <strong>Instrucció 4:</strong>
+
+        <blockquote>“Posa formatge.”</blockquote>
+
+        <p>L’ordinador posa <strong>tot el paquet de formatge</strong>.</p>
+      </div>
+
+
+      <div class="instruction">
+        <strong>Instrucció 5:</strong>
+
+        <blockquote>“Tanca l’entrepà.”</blockquote>
+
+        <p>
+          L’ordinador intenta tancar-lo, però tenim un problema:
+          l’entrepà està format per una bossa de pa i paquets sencers
+          de pernil i formatge.
+        </p>
+      </div>
+
+    </section>
+
+
+    <!-- ALUMNE 3 -->
+
+    <section>
+
+      <span class="role">ALUMNE 3</span>
+      <h2>DEBUGGER</h2>
+
+      <p>El debugger observa l’execució i registra els problemes.</p>
+
+      <h3>Taula d’errors</h3>
+
+      <div class="table-wrapper">
+
+        <table>
+          <thead>
+            <tr>
+              <th>Pas</th>
+              <th>Instrucció</th>
+              <th>Què ha fet l’ordinador?</th>
+              <th>Problema detectat</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>1</td>
+              <td>Agafa el pa</td>
+              <td>Ha agafat tota la bossa</td>
+              <td>No s’especifica quina peça ha d’agafar</td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td>Obri el pa</td>
+              <td>Ha intentat obrir la bossa</td>
+              <td>No s’indica quina peça ha d’obrir</td>
+            </tr>
+
+            <tr>
+              <td>3</td>
+              <td>Posa pernil</td>
+              <td>Ha posat tot el paquet</td>
+              <td>No s’indica la quantitat</td>
+            </tr>
+
+            <tr>
+              <td>4</td>
+              <td>Posa formatge</td>
+              <td>Ha posat tot el paquet</td>
+              <td>No s’indica la quantitat</td>
+            </tr>
+
+            <tr>
+              <td>5</td>
+              <td>Tanca l’entrepà</td>
+              <td>No pot tancar-lo correctament</td>
+              <td>Les instruccions anteriors no han sigut prou precises</td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </div>
+
+    </section>
+
+
+    <!-- DEPURACIÓ -->
+
+    <section>
+
+      <h2>ARA DEPUREM</h2>
+
+      <p>
+        Hem descobert que les instruccions que nosaltres entenem fàcilment
+        poden ser massa poc precises per a un ordinador.
+      </p>
+
+      <p>Ara corregim l’algorisme.</p>
+
+      <h3>Algorisme corregit</h3>
+
+      <div class="algorithm">
+
+        <ol>
+          <li>Agafa una peça de pa de la bossa.</li>
+          <li>Col·loca la peça de pa sobre un plat.</li>
+          <li>Talla la peça de pa per la meitat.</li>
+          <li>Agafa una llesca de pernil.</li>
+          <li>Col·loca la llesca de pernil sobre la meitat inferior del pa.</li>
+          <li>Agafa una llesca de formatge.</li>
+          <li>Col·loca la llesca de formatge damunt del pernil.</li>
+          <li>Agafa la meitat superior del pa.</li>
+          <li>Col·loca-la damunt del formatge.</li>
+          <li>El resultat és un entrepà de pernil i formatge.</li>
+        </ol>
+
+      </div>
+
+    </section>
+
+
+    <!-- QUÈ HEM APRÉS -->
+
+    <section class="learned">
+
+      <h2>QUÈ HEM APRÉS?</h2>
+
+      <p>
+        Un ordinador <strong>no sap què volem dir</strong>,
+        només sap què li hem indicat.
+      </p>
+
+      <p>Per això, un bon algorisme ha de ser:</p>
+
+      <ul>
+        <li><strong>Ordenat:</strong> els passos tenen un ordre.</li>
+        <li><strong>Finit:</strong> en algun moment acaba.</li>
+        <li><strong>Precís:</strong> cada instrucció explica què cal fer.</li>
+        <li>
+          <strong>No ambigu:</strong>
+          una instrucció no permet diferents interpretacions.
+        </li>
+      </ul>
+
+      <h3>La pregunta clau és:</h3>
+
+      <div class="rule">
+        Si jo fora un ordinador i només poguera fer exactament
+        el que està escrit, sabria què fer?
+      </div>
+
+      <p>
+        Si la resposta és <strong>no</strong>, cal millorar la instrucció.
+      </p>
+
+    </section>
+
+
+    <!-- ARA ÉS EL VOSTRE TORN -->
+
+    <section>
+
+      <h2>ARA ÉS EL VOSTRE TORN</h2>
+
+      <p>En grups de 3:</p>
+
+
+      <h3>1. Trieu una tasca</h3>
+
+      <p>Per exemple:</p>
+
+      <ul class="tasks">
+        <li>Preparar un entrepà.</li>
+        <li>Enviar un missatge.</li>
+        <li>Connectar-se a una xarxa Wi-Fi.</li>
+        <li>Traure diners d’un caixer.</li>
+        <li>Instal·lar una aplicació.</li>
+        <li>Preparar la motxilla.</li>
+      </ul>
+
+
+      <h3>2. Repartiu els papers</h3>
+
+      <div class="roles-grid">
+
+        <div class="role-card">
+          <strong>PROGRAMADOR</strong>
+          Escriu les instruccions.
+        </div>
+
+        <div class="role-card">
+          <strong>ORDINADOR</strong>
+          Executa literalment les instruccions.
+        </div>
+
+        <div class="role-card">
+          <strong>DEBUGGER</strong>
+          Detecta i registra els errors.
+        </div>
+
+      </div>
+
+
+      <h3>3. Executeu l’algorisme inicial</h3>
+
+      <p>No el corregiu mentre l’esteu executant.</p>
+
+
+      <h3>4. Registreu els errors</h3>
+
+      <p>Feu una taula com aquesta:</p>
+
+      <div class="table-wrapper">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Pas</th>
+              <th>Instrucció</th>
+              <th>Què ha fet l’ordinador?</th>
+              <th>Problema</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td>1</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+
+      <h3>5. Corregiu l’algorisme</h3>
+
+      <p>Feu una versió més precisa.</p>
+
+
+      <h3>6. Feu el diagrama de flux</h3>
+
+      <p>
+        Representeu visualment els passos de la
+        <strong>versió corregida</strong>.
+      </p>
+
+    </section>
+
+
+    <!-- PRODUCTE FINAL -->
+
+    <section class="final-product">
+
+      <h2>PRODUCTE FINAL</h2>
+
+      <p>El document que entregareu haurà de contenir:</p>
+
+      <div class="product-step">
+        1. Algorisme inicial
+      </div>
+
+      <div class="arrow">↓</div>
+
+      <div class="product-step">
+        2. Taula d’errors detectats
+      </div>
+
+      <div class="arrow">↓</div>
+
+      <div class="product-step">
+        3. Algorisme corregit
+      </div>
+
+      <div class="arrow">↓</div>
+
+      <div class="product-step">
+        4. Diagrama de flux de la solució final
+      </div>
+
+      <div class="final-note">
+
+        <strong>No elimineu l’algorisme inicial.</strong>
+
+        <p>
+          Els errors són una part important de l’activitat:
+          ens permeten veure com heu millorat la vostra solució.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>
