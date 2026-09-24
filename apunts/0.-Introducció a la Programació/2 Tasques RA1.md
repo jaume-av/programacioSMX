@@ -1,5 +1,5 @@
 ---
-title: 1. Introducció a la Programació
+title: 0. Introducció a la Programació
 parent: Índex
 layout: default
 has_children: true
