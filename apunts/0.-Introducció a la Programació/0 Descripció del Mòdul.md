@@ -1,5 +1,5 @@
 ---
-title: 0. Descripció del Mòdul
+title: Descripció del Mòdul
 parent: Índex
 layout: default
 has_children: true
