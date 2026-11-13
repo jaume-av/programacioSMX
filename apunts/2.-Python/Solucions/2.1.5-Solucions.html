@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Solucions 2.1.5 — Operadors, entrada i eixida</title><style>body{margin:0;background:#f3f5f7;color:#202b38;font:17px/1.65 system-ui,sans-serif}main{max-width:1000px;margin:auto;padding:32px 20px}h1{line-height:1.2}h2{font-size:1.4rem;line-height:1.35}article{background:white;border:1px solid #d7dfe8;border-radius:12px;padding:24px;margin:24px 0}pre{overflow:auto;background:#172334;color:#eff5fc;padding:18px;border-radius:8px;font-size:14px;line-height:1.6}code{font-family:ui-monospace,monospace}p code,li code,td code{background:#edf1f6;padding:2px 4px;border-radius:3px}summary{cursor:pointer;font-weight:650;padding:12px}details{border:1px solid #cbd5e1;border-radius:8px;margin:16px 0;padding:0 12px}details.solution{border-color:#6585a9;background:#f4f8fc}summary:focus-visible{outline:3px solid #2869aa}table{border-collapse:collapse;display:block;overflow:auto;margin:16px 0}td,th{border:1px solid #cbd5e1;padding:8px 12px;text-align:left}caption{text-align:left;font-weight:bold}hr{border:0;border-top:1px solid #e1e6ed}@media(max-width:600px){article{padding:14px}main{padding:16px 10px}}</style></head>
+<body><main><h1>Solucions 2.1.5</h1><p>Operadors, entrada i eixida en Python. Cada exercici inclou l’enunciat i una possible solució comentada dins d’un desplegable.</p>
+<article>
+<h2 id="exercici-1-calculadora-bàsica-amb-operadors-aritmètics"><strong>EXERCICI 1 — Calculadora bàsica amb operadors aritmètics</strong></h2>
+<p>En este exercici construirem una calculadora senzilla utilitzant els operadors aritmètics bàsics de Python. El programa llegirà <strong>dos nombres reals introduïts per l’usuari</strong> i mostrarà el resultat de totes les operacions següents:</p>
+<ul>
+<li>suma</li>
+<li>resta</li>
+<li>multiplicació</li>
+<li>divisió</li>
+<li>potència</li>
+<li>mòdul (residu)</li>
+<li>mitjana</li>
+</ul>
+<p>Suposa que el segon nombre és diferent de zero; no cal comprovar-ho amb codi.</p>
+<hr />
+<h3 id="eixida-esperada-exemple"><strong>Eixida esperada (exemple)</strong></h3>
+<pre><code>Introdueix el primer número: 10
+Introdueix el segon número: 3
+
+Els resultats de les operacions són:
+
+La suma és: 13.0
+La resta és: 7.0
+El producte és: 30.0
+La divisió dona: 3.3333333333333335
+La potència resulta en: 1000.0
+El residu (mòdul) és: 1.0
+La mitjana dels dos valors és: 6.5</code></pre>
+<hr />
+
+<details class="solution"><summary>Mostrar la solució comentada</summary><pre><code class="language-python"># float permet llegir nombres amb decimals.
+a = float(input(&quot;Introdueix el primer número: &quot;))
+b = float(input(&quot;Introdueix el segon número: &quot;))
+# L’enunciat suposa que b és diferent de zero.
+print(&quot;Els resultats de les operacions són:&quot;)
+print(f&quot;La suma és: {a + b}&quot;)
+print(f&quot;La resta és: {a - b}&quot;)
+print(f&quot;El producte és: {a * b}&quot;)
+print(f&quot;La divisió dona: {a / b}&quot;)
+print(f&quot;La potència resulta en: {a ** b}&quot;)
+print(f&quot;El residu (mòdul) és: {a % b}&quot;)
+# Els parèntesis fan que primer se sumen els dos valors.
+print(f&quot;La mitjana dels dos valors és: {(a + b) / 2}&quot;)</code></pre></details>
+</article>
+<article>
+<h2 id="exercici-2-una-longitud-en-peus-i-polzades"><strong>EXERCICI 2 — Una longitud en peus i polzades</strong></h2>
+<p>Crea un programa que demane els <strong>peus</strong> i les <strong>polzades addicionals</strong> d’una mesura i mostre la longitud total en <strong>centímetres</strong>.</p>
+<p>Utilitza estes equivalències:</p>
+<ul>
+<li><strong>1 polzada equival a 2.54 centímetres.</strong></li>
+<li><strong>1 peu equival a 12 polzades.</strong></li>
+</ul>
+<h3 id="eixida-esperada-exemple"><strong>Eixida esperada (exemple)</strong></h3>
+<pre><code>Introdueix els peus: 4
+Introdueix les polzades addicionals: 9
+La longitud total és: 144.78 cm</code></pre>
+<hr />
+
+<details class="solution"><summary>Mostrar la solució comentada</summary><pre><code class="language-python">peus = float(input(&quot;Introdueix els peus: &quot;))
+polzades = float(input(&quot;Introdueix les polzades addicionals: &quot;))
+# Convertim els peus en polzades i afegim les polzades addicionals.
+polzades_totals = peus * 12 + polzades
+# Cada polzada equival a 2.54 centímetres.
+centimetres = polzades_totals * 2.54
+print(f&quot;La longitud total és: {centimetres:.2f} cm&quot;)</code></pre></details>
+</article>
+<article>
+<h2 id="exercici-3-corregir-un-convertidor-de-temperatures"><strong>EXERCICI 3 — Corregir un convertidor de temperatures</strong></h2>
+<p>Este programa ha de convertir una temperatura de <strong>Celsius a Fahrenheit</strong> i una altra de <strong>Fahrenheit a Celsius</strong>, però conté errors.</p>
+<p>Les fórmules correctes són:</p>
+<pre><code>F = 1.8 · C + 32
+C = (F − 32) / 1.8</code></pre>
+<pre class="python"><code>celsius = input(&quot;Introdueix una temperatura en ºC: &quot;)
+fahrenheit = 1.8 * celsius + 32
+print(f&quot;La temperatura transformada a ºF és: {fahrenheit} ºF&quot;)
+
+fahrenheit = float(input(&quot;Introdueix una temperatura en ºF: &quot;))
+celsius = fahrenheit - 32 / 1.8
+print(f&quot;Convertint a graus Celsius obtenim: {celsius} ºC&quot;)</code></pre>
+<ol type="1">
+<li>Abans d’executar-lo, identifica el problema de conversió de l’entrada i el problema de precedència.</li>
+<li>Corregix-los i adapta les f-strings perquè els resultats tinguen <strong>un decimal</strong>.</li>
+<li>Executa el programa amb les dades següents i explica breument cada canvi.</li>
+</ol>
+<h3 id="eixida-esperada"><strong>Eixida esperada</strong></h3>
+<pre><code>Introdueix una temperatura en ºC: 36.5
+La temperatura transformada a ºF és: 97.7 ºF
+
+Introdueix una temperatura en ºF: 451
+Convertint a graus Celsius obtenim: 232.8 ºC</code></pre>
+<hr />
+
+<details class="solution"><summary>Mostrar la solució comentada</summary><p>El programa original intenta multiplicar un text per un decimal. Després de corregir-ho, cal reparar també la resta abans de la divisió i afegir el format d’un decimal.</p><pre><code class="language-python"># input retorna text: cal convertir-lo abans de multiplicar.
+celsius = float(input(&quot;Introdueix una temperatura en ºC: &quot;))
+fahrenheit = 1.8 * celsius + 32
+# :.1f mostra el resultat amb un decimal.
+print(f&quot;La temperatura transformada a ºF és: {fahrenheit:.1f} ºF&quot;)
+print()
+fahrenheit = float(input(&quot;Introdueix una temperatura en ºF: &quot;))
+# Els parèntesis obliguen a restar 32 abans de dividir.
+celsius = (fahrenheit - 32) / 1.8
+print(f&quot;Convertint a graus Celsius obtenim: {celsius:.1f} ºC&quot;)</code></pre></details>
+</article>
+<article>
+<h2 id="exercici-4-descompondre-una-duració"><strong>EXERCICI 4 — Descompondre una duració</strong></h2>
+<p>Per separar una quantitat de segons en minuts i segons, podem utilitzar <strong>divisió entera (<code>//</code>)</strong> i <strong>residu (<code>%</code>)</strong>:</p>
+<pre class="python"><code>s = 1234
+minuts = s // 60
+segons_restants = s % 60
+print(f&quot;{s} segons són {minuts} minuts i {segons_restants} segons&quot;)</code></pre>
+<p>Este exemple mostra <code>1234 segons són 20 minuts i 34 segons</code>.</p>
+<p>A partir d’este model, crea un programa que demane una quantitat de <strong>segons enters no negatius</strong> i la descomponga en <strong>hores, minuts i segons</strong>. Suposa que l’entrada és correcta; no cal validar-la.</p>
+<p>Recorda que una hora té 3600 segons i un minut té 60 segons.</p>
+<details>
+<summary>
+Pista: separar les parts del temps
+</summary>
+<p>Calcula primer les hores completes. Amb els segons que sobren després de llevar les hores, calcula els minuts complets. Finalment, calcula els segons que sobren després de llevar els minuts.</p>
+</details>
+<h3 id="eixida-esperada-exemple"><strong>Eixida esperada (exemple)</strong></h3>
+<pre><code>Escriu una quantitat de segons: 12345
+12345 segons són 3 hores, 25 minuts i 45 segons</code></pre>
+<hr />
+
+<details class="solution"><summary>Mostrar la solució comentada</summary><pre><code class="language-python"># La duració és un nombre enter no negatiu, segons l’enunciat.
+segons = int(input(&quot;Escriu una quantitat de segons: &quot;))
+# // calcula les hores completes i % conserva el que sobra.
+hores = segons // 3600
+resta = segons % 3600
+# Descomponem la resta en minuts complets i segons.
+minuts = resta // 60
+segons_restants = resta % 60
+print(f&quot;{segons} segons són {hores} hores, {minuts} minuts i {segons_restants} segons&quot;)</code></pre></details>
+</article>
+<article>
+<h2 id="exercici-5-índex-de-massa-corporal-imc"><strong>EXERCICI 5 — Índex de Massa Corporal (IMC)</strong></h2>
+<p>Anem a calcular l’<strong>Índex de Massa Corporal (IMC)</strong> d’una persona a partir de dos dades que proporcionarà l’usuari: el <strong>pes</strong> (en quilograms) i l’<strong>altura</strong> (en metres). El programa aplicarà la fórmula oficial:</p>
+<pre><code>IMC = pes / (altura²)</code></pre>
+<p>Suposa que l’altura introduïda és positiva; no cal comprovar-ho amb codi.</p>
+<p>El resultat s’ha de mostrar amb <strong>un decimal</strong>, utilitzant formatació adequada.</p>
+<hr />
+<h3 id="eixida-esperada-exemple"><strong>Eixida esperada (exemple)</strong></h3>
+<pre><code>Quant peses? 78
+Quant mesures en metres? 1.73
+Segons les dades facilitades, el teu IMC és 26.1</code></pre>
+
+<details class="solution"><summary>Mostrar la solució comentada</summary><pre><code class="language-python">pes = float(input(&quot;Quant peses? &quot;))
+altura = float(input(&quot;Quant mesures en metres? &quot;))
+# ** 2 eleva l’altura al quadrat. Suposem una altura positiva.
+imc = pes / (altura ** 2)
+# El format només arrodonix la presentació, no la variable.
+print(f&quot;Segons les dades facilitades, el teu IMC és {imc:.1f}&quot;)</code></pre></details>
+</article>
+<article>
+<h2 id="exercici-6-predir-comprovar-i-explicar-expressions"><strong>EXERCICI 6 — Predir, comprovar i explicar expressions</strong></h2>
+<p>Abans d’executar cap codi, escriu el resultat que esperes de cada expressió. Després comprova’l amb <code>print()</code> i explica les diferències dins de cada parella.</p>
+<p><strong>Exemple resolt:</strong> <code>2 + 3 * 4</code> dona <code>14</code>, perquè la multiplicació es calcula abans que la suma.</p>
+<table>
+<thead>
+<tr>
+<th>Parella</th>
+<th>Primera expressió</th>
+<th>Segona expressió</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>17 / 5</code></td>
+<td><code>17 // 5</code></td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>17 // 5</code></td>
+<td><code>17 % 5</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>2 + 3 * 4</code></td>
+<td><code>(2 + 3) * 4</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>2 * 3 ** 2</code></td>
+<td><code>(2 * 3) ** 2</code></td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>20 - 8 / 2</code></td>
+<td><code>(20 - 8) / 2</code></td>
+</tr>
+</tbody>
+</table>
+<p>Si una predicció no coincideix amb l’execució, explica quin operador o quina regla de precedència havies interpretat incorrectament.</p>
+<hr />
+
+<details class="solution"><summary>Mostrar la solució comentada</summary><pre><code class="language-python"># Parella 1: / dona el quocient decimal; // dona el quocient enter.
+print(17 / 5)             # 3.4
+print(17 // 5)            # 3
+# Parella 2: // calcula el quocient; % calcula el residu.
+print(17 // 5)            # 3
+print(17 % 5)             # 2, perquè 17 = 3 * 5 + 2
+# Parella 3: * té prioritat; els parèntesis canvien l’ordre.
+print(2 + 3 * 4)          # 14
+print((2 + 3) * 4)        # 20
+# Parella 4: la potència es calcula abans que la multiplicació.
+print(2 * 3 ** 2)         # 18
+print((2 * 3) ** 2)       # 36
+# Parella 5: la divisió es calcula abans que la resta.
+print(20 - 8 / 2)         # 16.0
+print((20 - 8) / 2)       # 6.0</code></pre></details>
+</article>
+<article>
+<h2 id="exercici-7-conversió-de-moneda-euros-i-dòlars"><strong>EXERCICI 7 — Conversió de moneda (euros i dòlars)</strong></h2>
+<p>En este exercici practicarem conversions entre euros i dòlars utilitzant un tipus de canvi fix. El programa farà les dues conversions.</p>
+<p>Utilitza només esta equivalència per a deduir les dos conversions:</p>
+<pre><code>1 € = 1.08 $</code></pre>
+<p>Mostra els imports calculats amb <strong>dos decimals</strong>.</p>
+<details>
+<summary>
+Pista: interpretar l’equivalència
+</summary>
+<p>Pensa que cada euro correspon a 1.08 dòlars. Per a la conversió inversa, pregunta’t quants grups de 1.08 dòlars hi ha en la quantitat introduïda.</p>
+</details>
+<hr />
+<h3 id="eixida-esperada"><strong>Eixida esperada</strong></h3>
+<pre><code>Introdueix la quantitat en euros: 50
+Transformada a dòlars és: 54.00 $
+
+Introdueix la quantitat en dòlars: 100
+En euros equival a: 92.59 €</code></pre>
+<hr />
+
+<details class="solution"><summary>Mostrar la solució comentada</summary><pre><code class="language-python"># El tipus de canvi és fix per a esta activitat.
+canvi = 1.08
+euros = float(input(&quot;Introdueix la quantitat en euros: &quot;))
+# Cada euro aporta 1.08 dòlars: multipliquem.
+dolars = euros * canvi
+print(f&quot;Transformada a dòlars és: {dolars:.2f} $&quot;)
+print()
+dolars = float(input(&quot;Introdueix la quantitat en dòlars: &quot;))
+# La conversió inversa compta grups de 1.08 dòlars: dividim.
+euros = dolars / canvi
+print(f&quot;En euros equival a: {euros:.2f} €&quot;)</code></pre></details>
+</article>
+<article>
+<h2 id="exercici-8-completar-un-programa-diva"><strong>EXERCICI 8 — Completar un programa d’IVA</strong></h2>
+<p>Completa els buits <code>___</code> perquè el programa llija un <strong>preu base</strong> i un <strong>percentatge d’IVA</strong>, calcule l’<strong>import de l’IVA</strong> i el <strong>preu final</strong>, i mostre els tres imports amb dos decimals.</p>
+<pre class="python"><code>preu_base = float(input(&quot;Introdueix el preu base del producte (€): &quot;))
+iva = float(input(&quot;Indica el percentatge d&#39;IVA aplicable (%): &quot;))
+
+iva_import = ___
+preu_final = ___
+
+print(f&quot;Preu base: {preu_base:.2f} €&quot;)
+print(f&quot;Import de l&#39;IVA: {iva_import:.2f} €&quot;)
+print(f&quot;Preu final: {preu_final:.2f} €&quot;)</code></pre>
+<details>
+<summary>
+Pista: calcular un percentatge
+</summary>
+<p>Un IVA del 21% significa afegir 21 euros per cada 100 euros de preu base. El preu final inclou el preu base i l’import de l’IVA.</p>
+</details>
+<h3 id="eixida-esperada-exemple"><strong>Eixida esperada (exemple)</strong></h3>
+<pre><code>Introdueix el preu base del producte (€): 120
+Indica el percentatge d&#39;IVA aplicable (%): 21
+Preu base: 120.00 €
+Import de l&#39;IVA: 25.20 €
+Preu final: 145.20 €</code></pre>
+<hr />
+
+<details class="solution"><summary>Mostrar la solució comentada</summary><pre><code class="language-python">preu_base = float(input(&quot;Introdueix el preu base del producte (€): &quot;))
+iva = float(input(&quot;Indica el percentatge d&#x27;IVA aplicable (%): &quot;))
+# Un percentatge representa una quantitat per cada 100 unitats.
+iva_import = preu_base * iva / 100
+# El total inclou la base i l’import de l’impost.
+preu_final = preu_base + iva_import
+print(f&quot;Preu base: {preu_base:.2f} €&quot;)
+print(f&quot;Import de l&#x27;IVA: {iva_import:.2f} €&quot;)
+print(f&quot;Preu final: {preu_final:.2f} €&quot;)</code></pre></details>
+</article>
+<article>
+<h2 id="exercici-9-gestió-completa-dun-viatge"><strong>EXERCICI 9 — Gestió completa d’un viatge</strong></h2>
+<p>En este exercici simularem els càlculs bàsics necessaris per planificar un viatge senzill.</p>
+<p>El programa haurà de llegir, en este ordre:</p>
+<ul>
+<li>la <strong>distància total del viatge</strong> (en quilòmetres),</li>
+<li>el <strong>consum del vehicle</strong> (litres cada 100 km),</li>
+<li>el <strong>preu del litre de combustible</strong>,</li>
+<li>la <strong>duració del viatge</strong> en segons.</li>
+</ul>
+<p>A partir d’estes dades, el programa calcularà i mostrarà:</p>
+<ol type="1">
+<li>Els <strong>litres totals</strong> consumits.</li>
+<li>El <strong>cost total del combustible</strong>.</li>
+<li>El temps del viatge expressat en <strong>hores, minuts i segons</strong>.</li>
+</ol>
+<p>Decideix les expressions necessàries i l’ordre dels càlculs a partir de les dades i les seues unitats.</p>
+<p>Tots els resultats s’han de mostrar amb missatges clars.</p>
+<details>
+<summary>
+Pista: relacionar distància, consum i cost
+</summary>
+<p>El consum indica els litres necessaris per recórrer 100 km. Calcula quants trams de 100 km té el viatge i relaciona’ls amb el consum. Després utilitza el preu de cada litre per obtindre el cost. Per al temps, recupera el procediment de l’exercici 4.</p>
+</details>
+<hr />
+<h3 id="eixida-esperada-exemple"><strong>Eixida esperada (exemple)</strong></h3>
+<pre><code>Introdueix la distància del viatge (km): 250
+Introdueix el consum del vehicle (L/100 km): 6.5
+Introdueix el preu del litre de combustible (€): 1.75
+Introdueix la duració del viatge en segons: 14400
+
+Litres consumits: 16.25
+Cost total del combustible: 28.4375 €
+
+Duració del viatge:
+4 hores, 0 minuts i 0 segons</code></pre>
+<hr />
+
+<details class="solution"><summary>Mostrar la solució comentada</summary><pre><code class="language-python">distancia = float(input(&quot;Introdueix la distància del viatge (km): &quot;))
+consum = float(input(&quot;Introdueix el consum del vehicle (L/100 km): &quot;))
+preu_litre = float(input(&quot;Introdueix el preu del litre de combustible (€): &quot;))
+segons = int(input(&quot;Introdueix la duració del viatge en segons: &quot;))
+# El consum es dona per cada 100 km: ajustem-lo a la distància.
+litres = distancia * consum / 100
+# Els litres consumits determinen el cost total.
+cost = litres * preu_litre
+# Separem hores completes, minuts i segons restants.
+hores = segons // 3600
+minuts = (segons % 3600) // 60
+segons_restants = segons % 60
+print(f&quot;Litres consumits: {litres}&quot;)
+print(f&quot;Cost total del combustible: {cost} €&quot;)
+print(&quot;Duració del viatge:&quot;)
+print(f&quot;{hores} hores, {minuts} minuts i {segons_restants} segons&quot;)</code></pre></details>
+</article>
+<article>
+<h2 id="exercici-10-localitzar-un-error-en-una-factura"><strong>EXERCICI 10 — Localitzar un error en una factura</strong></h2>
+<p>En esta activitat, la regla del càlcul és: <strong>primer s’afig l’IVA al subtotal i després es resta un descompte fix en euros</strong>.</p>
+<p>El programa següent s’executa, però aplica el descompte en un moment incorrecte:</p>
+<pre class="python"><code>preu = float(input(&quot;Introdueix el preu del producte (€): &quot;))
+quantitat = int(input(&quot;Introdueix la quantitat comprada: &quot;))
+iva = float(input(&quot;Indica l&#39;IVA (%): &quot;))
+descompte = float(input(&quot;Introdueix el descompte aplicat (€): &quot;))
+
+subtotal = preu * quantitat
+base_descomptada = subtotal - descompte
+iva_import = base_descomptada * iva / 100
+total_final = base_descomptada + iva_import
+
+print(f&quot;Subtotal: {subtotal:.2f} €&quot;)
+print(f&quot;IVA aplicat: {iva_import:.2f} €&quot;)
+print(f&quot;Preu final després del descompte: {total_final:.2f} €&quot;)</code></pre>
+<ol type="1">
+<li>Executa’l amb les dades de l’exemple i compara els imports amb el resultat correcte.</li>
+<li>Explica per què l’ordre dels càlculs incompleix la regla de l’activitat.</li>
+<li>Corregix el programa perquè calcule l’IVA sobre el subtotal i reste el descompte al total amb IVA.</li>
+</ol>
+<h3 id="eixida-esperada-després-de-corregir-lo"><strong>Eixida esperada després de corregir-lo</strong></h3>
+<pre><code>Introdueix el preu del producte (€): 12.5
+Introdueix la quantitat comprada: 4
+Indica l&#39;IVA (%): 21
+Introdueix el descompte aplicat (€): 5
+Subtotal: 50.00 €
+IVA aplicat: 10.50 €
+Preu final després del descompte: 55.50 €</code></pre>
+<hr />
+
+<details class="solution"><summary>Mostrar la solució comentada</summary><p>Amb les dades de l’exemple, el programa original calcula un IVA de 9.45 € i un total de 54.45 €. La regla demanada exigix un IVA de 10.50 € i un total de 55.50 €: llevar el descompte abans de l’IVA reduïx indegudament la base de càlcul d’esta activitat.</p><pre><code class="language-python">preu = float(input(&quot;Introdueix el preu del producte (€): &quot;))
+quantitat = int(input(&quot;Introdueix la quantitat comprada: &quot;))
+iva = float(input(&quot;Indica l&#x27;IVA (%): &quot;))
+descompte = float(input(&quot;Introdueix el descompte aplicat (€): &quot;))
+# L’IVA es calcula sobre el subtotal complet, segons la regla.
+subtotal = preu * quantitat
+iva_import = subtotal * iva / 100
+total_iva = subtotal + iva_import
+# Restem el descompte després d’afegir l’IVA.
+total_final = total_iva - descompte
+print(f&quot;Subtotal: {subtotal:.2f} €&quot;)
+print(f&quot;IVA aplicat: {iva_import:.2f} €&quot;)
+print(f&quot;Preu final després del descompte: {total_final:.2f} €&quot;)</code></pre></details>
+</article>
+<article>
+<h2 id="exercici-11-comprovacions-amb-una-edat"><strong>EXERCICI 11 — Comprovacions amb una edat</strong></h2>
+<p>Crea un programa que demane una <strong>edat en anys enters</strong> i mostre el resultat de les comprovacions següents:</p>
+<ol type="1">
+<li>Si la persona és <strong>major d’edat</strong> (18 anys o més).</li>
+<li>Si l’edat està <strong>entre 16 i 25 anys</strong>, ambdós inclosos.</li>
+<li>Si l’edat queda <strong>fora de l’interval de 16 a 25 anys</strong>.</li>
+</ol>
+<p>Utilitza operadors de comparació i operadors lògics. Mostra cada resultat com a <strong><code>True</code> o <code>False</code></strong>, amb un missatge que indique què s’ha comprovat. No utilitzes <code>if</code>.</p>
+<p>Abans d’executar el programa, prediu les tres respostes per a les edats <strong>15, 16, 17, 18, 25 i 26</strong>. Després executa’l una vegada per cada edat i comprova les prediccions. Explica per què 16 i 25 pertanyen a l’interval i què canvia en arribar als 18 anys.</p>
+<hr />
+<h3 id="eixida-esperada-exemple"><strong>Eixida esperada (exemple)</strong></h3>
+<pre><code>Introdueix la teua edat: 17
+És major d&#39;edat: False
+Està entre 16 i 25 anys: True
+Està fora de l&#39;interval de 16 a 25 anys: False</code></pre>
+<hr />
+
+<details class="solution"><summary>Mostrar la solució comentada</summary><table><caption>Comprovació dels límits</caption><thead><tr><th>Edat</th><th>Major d’edat</th><th>Dins de l’interval</th><th>Fora de l’interval</th></tr></thead><tbody><tr><td>15</td><td>False</td><td>False</td><td>True</td></tr><tr><td>16</td><td>False</td><td>True</td><td>False</td></tr><tr><td>17</td><td>False</td><td>True</td><td>False</td></tr><tr><td>18</td><td>True</td><td>True</td><td>False</td></tr><tr><td>25</td><td>True</td><td>True</td><td>False</td></tr><tr><td>26</td><td>True</td><td>False</td><td>True</td></tr></tbody></table><p>16 i 25 estan inclosos pels operadors &gt;= i &lt;=. Als 18 anys només canvia la comprovació de majoria d’edat; la persona continua dins de l’interval.</p><pre><code class="language-python">edat = int(input(&quot;Introdueix la teua edat: &quot;))
+# &gt;= inclou els 18 anys.
+major_edat = edat &gt;= 18
+# and exigix complir els dos límits, incloent 16 i 25.
+dins_interval = edat &gt;= 16 and edat &lt;= 25
+# or és cert quan l’edat queda per davall o per damunt de l’interval.
+fora_interval = edat &lt; 16 or edat &gt; 25
+# També podríem escriure: fora_interval = not dins_interval.
+print(f&quot;És major d&#x27;edat: {major_edat}&quot;)
+print(f&quot;Està entre 16 i 25 anys: {dins_interval}&quot;)
+print(f&quot;Està fora de l&#x27;interval de 16 a 25 anys: {fora_interval}&quot;)</code></pre></details>
+</article>
+</main></body></html>
