@@ -1,0 +1,23 @@
+{
+  "originals_intactes": true,
+  "pagines_temari": 7,
+  "activitats_originals_conservades": 21,
+  "pares_i_enllacos_correctes": true,
+  "fragments_sintaxi_correcta": 45,
+  "fragments_incorrectes_intencionats": 4,
+  "proves_transport": 8,
+  "proves_llum": 11,
+  "prediccions_comprovades": 4,
+  "compilacio_jekyll": "correcta: Jekyll 4.4, Just the Docs 0.10.1",
+  "navegador": "set pàgines, navegació, enllaços i vista mòbil correctes",
+  "actualitzacio_exercicis": {
+    "activitats_principals": 8,
+    "fitxers_principals_amb_variant": 9,
+    "reforc_opcional": 16,
+    "fitxers_python": 25,
+    "execucions_correctes": 205,
+    "teoria_sense_canvis": true,
+    "originals_intactes": true,
+    "vista_just_the_docs": "compilada i comprovada: huit activitats, bancs desplegables i programes disponibles"
+  }
+}

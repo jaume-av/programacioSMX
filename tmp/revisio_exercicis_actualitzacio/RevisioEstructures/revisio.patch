@@ -1,0 +1,1587 @@
+--- original/2.2.-estructura.md
++++ revisio/2.2.-estructura.md
+@@ -6,142 +6,50 @@
+ nav_order: 2
+ ---
+ 
+-# 1 Introducció a les condicions en Python
++# 2.2 Estructures condicionals en Python
+ 
+-En Python, una **condició** és una expressió que el programa pot avaluar com:
++En esta unitat aprendrem a fer que un programa prenga decisions. Partirem de les comparacions i dels valors booleans per a construir programes amb camins d’execució diferents.
+ 
+-* `True`
+-* `False`
++## Què aprendrem?
+ 
+-És a dir, una condició **no executa accions**, només **retorna un valor booleà**.
++- A distingir entre una condició i una estructura condicional.
++- A guardar i utilitzar valors booleans.
++- A llegir respostes de tipus «si/no» i transformar-les en condicions.
++- A executar un bloc amb `if`.
++- A combinar condicions amb `and`, `or` i `not`.
++- A triar alternatives amb `if/else` i `if/elif/else`.
++- A utilitzar condicionals dins d’altres condicionals quan calga.
++- A distingir diversos `if` independents d’una única cadena d’alternatives.
++- A provar els límits dels intervals i detectar errors de lògica.
+ 
+----
++## Coneixements previs
+ 
+-## Condicions amb comparacions
++Variables, tipus bàsics, `print()`, `input()`, conversió amb `int()` i `float()`, operadors aritmètics, comparacions i operadors lògics de la unitat 2.1.
+ 
+-Les comparacions generen valors booleans:
++No necessitem bucles, funcions pròpies, classes ni col·leccions. Quan una dada no és vàlida, podem mostrar un avís i evitar el càlcul amb condicionals; encara no cal tornar a preguntar amb un bucle.
+ 
+-```python
+-5 > 3          # True
+-10 == 2 * 5    # True
+-4 != 4         # False
+-```
++## Recorregut de la unitat
+ 
+-Exemple amb variables:
++| Apartat | Contingut |
++|---|---|
++| [2.2.1 Condicionals](<2.2.1-Introducció als codicionals.html>) | Condicions, booleans, lectura de respostes i indentació |
++| [2.2.2 IF - Condicionals Simples](<2.2.2-Condicionals Simples.html>) | Un únic bloc, condicions compostes i errors habituals |
++| [Exercicis IF](<2.2.2.1-Exercicis IF.html>) | Activitats 1 i 2, amb reforç bàsic opcional |
++| [2.2.3 IF - ELSE - Condicionals Compostos](<2.2.3-Condicionals Compostos.html>) | Alternatives, ordre, condicionals anidats i decisions independents |
++| [Exercicis IF-ELSE](<2.2.3.1 -Exercicis IF-ELSE.html>) | Activitats 3 a 8, casos pràctics i reforç opcional |
++| [2.2.4 Repàs i proves](<2.2.4-Repas i proves.html>) | Seguiment, predicció d’eixides, depuració i casos de prova |
+ 
+-```python
+-edat = 17
+-print(edat >= 18)
+-```
++## Dos significats de «simple» i «compost»
+ 
+-Eixida:
++Cal distingir la **condició** que avaluem de l’**estructura** que organitza els blocs:
+ 
+-```
+-False
+-```
++| Concepte | Exemple | Què descriu? |
++|---|---|---|
++| Condició simple | `edat >= 18` | Una comparació |
++| Condició composta | `edat >= 18 and soci` | Diverses comprovacions combinades |
++| Condicional simple | `if condicio:` | Un bloc que només s’executa si la condició és certa |
++| Condicional amb alternatives | `if/else` o `if/elif/else` | Diferents blocs segons el cas |
+ 
+-La comparació `edat >= 18` **no decideix res encara**, només diu si és certa o no.
++Un condicional simple pot tindre una condició composta: un `if` amb `and` continua sense tindre alternativa si no hi ha `else`.
+ 
+----
+-
+-## Expressions booleanes
+-
+-Podem combinar comparacions amb operadors lògics (`and`, `or`, `not`):
+-
+-```python
+-edat = 15
+-adolescent = edat >= 12 and edat <= 17
+-print(adolescent)
+-```
+-
+-Eixida:
+-
+-```
+-True
+-```
+-
+-Una **expressió booleana** pot ser tan simple o tan complexa com vulguem, però **sempre acaba sent True o False**.
+-
+----
+-
+-## Guardar una condició en una variable
+-
+-Una condició es pot guardar en una variable booleana:
+-
+-```python
+-edat = 20
+-es_major_edat = edat >= 18
+-
+-print(es_major_edat)
+-```
+-
+-Eixida:
+-
+-```
+-True
+-```
+-
+-Això és molt habitual en programes reals i fa el codi més clar.
+-
+----
+-
+-## Assignar (`=`) no és comparar (`==`)
+-
+-És molt important no confondre:
+-
+-```python
+-x = 5      # assignació
+-x == 5     # comparació
+-```
+-
+-* `=` guarda un valor
+-* `==` comprova si dos valors són iguals
+-
+-Una comparació **no modifica** la variable, només retorna `True` o `False`.
+-
+----
+-
+-## El flux del programa fins ara
+-
+-Fins ara, els nostres programes:
+-
+-* s’executen **de dalt a baix**
+-* totes les línies s’executen **sempre**
+-
+-Exemple:
+-
+-```python
+-print("Inici")
+-print("Càlcul")
+-print("Final")
+-```
+-
+-Sempre es mostren les tres línies.
+-
+----
+-
+-## Blocs de codi i indentació
+-
+-Python utilitza la **indentació** per definir blocs de codi.
+-
+-Encara que no hem vist `if`, ja és important saber que:
+-
+-* la indentació **no és decorativa**
+-* indica quines línies formen part d’un mateix bloc
+-
+-Això serà clau en els condicionals.
+-
+----
+-
+-Fins ara hem aprés a:
+-
+-* calcular valors
+-* comparar dades
+-* obtindre `True` o `False`
+-
+- **El següent pas serà executar codi només quan una condició siga True.**
+-
+-Açò és exactament el que fan els condicionals.
+-
+----
+-
++La introducció detallada i tots els seus exemples es troben en 2.2.1. Esta pàgina servix com a entrada i índex, per a no repetir la mateixa explicació dues vegades.
+--- original/2.2.1-Introducció als codicionals.md
++++ revisio/2.2.1-Introducció als codicionals.md
+@@ -2,7 +2,7 @@
+ title: 2.2.1 Condicionals
+ parent: 2.2 Estructura
+ layout: default
+-has_children: true
++has_children: false
+ nav_order: 10
+ ---
+ 
+@@ -60,7 +60,9 @@
+ True
+ ```
+ 
+-Una **expressió booleana** pot ser tan simple o tan complexa com vulguem, però **sempre acaba sent True o False**.
++En estos exemples combinem comparacions i variables booleanes, de manera que el resultat és `True` o `False`.
++
++Mantindrem este ús durant la unitat. En Python, `and` i `or` també poden operar amb altres tipus i retornar un dels operands; no hem de generalitzar que qualsevol expressió amb estos operadors retorna sempre un `bool`.
+ 
+ ---
+ 
+@@ -82,6 +84,32 @@
+ ```
+ 
+ Això és molt habitual en programes reals i fa el codi més clar.
++
++---
++
++## Llegir respostes «si/no» i obtindre booleans
++
++`input()` retorna sempre text. Per tant, escriure `False` per teclat no crea automàticament el valor booleà `False`.
++
++En els exercicis d’esta unitat, quan es demane una resposta afirmativa o negativa, escriu **`si` o `no` en minúscula, sense accent**. Convertim la resposta mitjançant una comparació:
++
++```python
++resposta = input("Eres soci? (si/no): ")
++soci = resposta == "si"
++
++print(soci)
++```
++
++| Text introduït | Comparació | Valor de `soci` |
++|---|---|---|
++| `si` | `"si" == "si"` | `True` |
++| `no` | `"no" == "si"` | `False` |
++
++Podem repetir el mateix procediment per a `vip`, `repetidor`, `autoritzacio` o altres estats. No cal estudiar funcions pròpies ni utilitzar `eval()`.
++
++**No utilitzes `bool(input(...))` per a interpretar «si/no» o «True/False».** Una cadena no buida es considera certa: tant `bool("True")` com `bool("False")` donen `True`.
++
++En els exercicis bàsics pressuposem que s’introduïx una de les dues respostes indicades. Una vegada estudiat `if/else`, podrem comprovar explícitament si la resposta és vàlida. No considerem qualsevol altre text com una resposta negativa correcta.
+ 
+ ---
+ 
+@@ -131,6 +159,8 @@
+ 
+ Això serà clau en els condicionals.
+ 
++En els exemples utilitzarem **quatre espais per cada nivell d’indentació**. Mantín el mateix criteri en tots els blocs i evita mesclar tabulacions amb espais.
++
+ ---
+ 
+ Fins ara hem aprés a:
+--- original/2.2.2-Condicionals Simples.md
++++ revisio/2.2.2-Condicionals Simples.md
+@@ -55,10 +55,7 @@
+ 
+ Eixida:
+ 
+-```
+-(no es mostra res) 
+-Quan la condició és falsa i no hi ha else, el programa no mostra cap missatge.
+-```
++No es mostra res: la condició és falsa i l’únic `print()` està dins del `if`. Esta frase és una explicació, no una eixida del programa.
+ 
+ Com que la condició és falsa, el `print` no s’executa, però el programa **no dona cap error**.
+ 
+@@ -208,7 +205,7 @@
+ 
+ >`not` canvia True per False i False per True.
+ 
+->**NOTA:** Per què passa de curs si repetidor és false? -> perquè la condicó es True (`not repetidor` == True.)
++> **Nota:** Per què passa de curs si `repetidor` és `False`? Perquè `not repetidor` val `True`, que és el valor que avalua el `if`.
+ 
+ ### Parèntesis
+ 
+@@ -246,7 +243,9 @@
+ edat == 18     # comparació
+ ```
+ 
+-En un `if` **sempre hem de comparar**.
++Després d’un `if` escrivim **una condició**. Pot ser una comparació, com `edat >= 18`, una variable booleana, com `soci`, o una combinació, com `edat >= 18 and soci`.
++
++No és obligatori escriure una comparació explícita si ja tenim un booleà. El que no podem fer és confondre l’assignació `=` amb la comparació `==`, com en este exemple incorrecte:
+ 
+ ```python
+ if edat = 18:
+@@ -260,3 +259,41 @@
+ 
+ ---
+ 
++
++## 2.5 Curtcircuit: no sempre s’avaluen totes les parts
++
++Python avalua les condicions d’esquerra a dreta i pot deixar d’avaluar-les quan ja coneix el resultat:
++
++- En `A and B`, si `A` és falsa, no s’avalua `B`.
++- En `A or B`, si `A` és certa, no s’avalua `B`.
++
++Açò s’anomena **curtcircuit**. És útil quan una comprovació protegix una operació que podria fallar:
++
++```python
++divisor = 0
++
++if divisor != 0 and 10 / divisor > 2:
++    print("El quocient és major que 2")
++
++print("Final")
++```
++
++Eixida:
++
++```text
++Final
++```
++
++`divisor != 0` és falsa, així que Python no calcula `10 / divisor`. No hi ha divisió per zero. No invertisques l’ordre de les dues parts: la comprovació de seguretat ha d’anar primer.
++
++## 2.6 Condició composta dins d’un condicional simple
++
++```python
++edat = 17
++autoritzacio = True
++
++if edat >= 16 and autoritzacio:
++    print("Pots entrar")
++```
++
++Hi ha dues comprovacions combinades, però només un bloc condicional. Per tant, la **condició és composta** i el **condicional és simple**. Si la condició és falsa, no hi ha cap bloc alternatiu.
+--- original/2.2.2.1-Exercicis IF.md
++++ revisio/2.2.2.1-Exercicis IF.md
+@@ -2,29 +2,95 @@
+ title: 2.2.2.1 Exercicis IF - Condicional Simple
+ parent: 2.2.2 IF - Condicionals Simples
+ layout: default
+-has_children: true
+-nav_order: 1020
++has_children: false
++nav_order: 10
+ ---
+ 
++# Del pseudocodi a Python: primeres decisions
+ 
++Ja heu treballat condicionals amb pseudocodi. Ara ens centrarem en la sintaxi de Python, la lectura de dades i el disseny de condicions. El recorregut principal consta de huit activitats entre els dos documents. Els exercicis elementals anteriors es conserven en bancs opcionals, no com una segona tanda obligatòria.
+ 
+-## Exercici 1 — `if` amb condició simple
++## Recorregut principal
+ 
+-En este exercici treballarem el **condicional `if` més bàsic**.
++| Activitat | Repte nou |
++|---|---|
++| 1. Primera adaptació | Sintaxi, entrada i continuació del flux |
++| 2. Accés al taller | Regles combinades, vies alternatives i bloqueig |
++| 3. Qualificació vàlida | Validació i classificació de decimals |
++| 4. Major de tres | Comparacions i empats |
++| 5. Calculadora | Selecció d’operació i prevenció d’errors |
++| 6. Transport públic | Prioritats i un encàrrec de canvi |
++| 7. Factura de llum | Ajustos compatibles i càlculs successius |
++| 8. Reserva d’una sala | Transferència autònoma a un problema nou |
+ 
+-Demana a l’usuari **un número enter**.
+-Comprova si el número és **major que 0**.
+-Si la condició és certa, mostra el missatge:
++Les activitats 3 a 8 estan en [el document de condicionals amb alternatives](<2.2.3.1 -Exercicis IF-ELSE.html>).
+ 
+-```
+-El número és positiu
++## Instruccions comunes
++
++- En este primer document utilitza `if` sense `else` ni `elif`.
++- No calen bucles, funcions pròpies, classes, col·leccions ni `try/except`.
++- Les edats són enters no negatius. Es pressuposa el format numèric correcte.
++- Les preguntes afirmatives o negatives admeten `si/no` en minúscula, sense accent. Compara el text amb `"si"` per a obtindre un booleà; no utilitzes `bool(input(...))`.
++- En estes activitats pressuposem que les respostes tenen el format indicat. Encara no cal tornar a preguntar.
++- Prediu les eixides abans d’executar i registra les proves.
++
++## Activitat 1 — Primera adaptació a Python
++
++**Activitat breu de diagnòstic.** Demana un número enter. Si és major que zero, mostra «El número és positiu». Després de la comprovació, mostra sempre «Comprovació acabada».
++
++Si és zero o negatiu, només ha d’aparéixer el missatge final, a més de la pregunta d’entrada.
++
++| Entrada | Eixida esperada després de la pregunta |
++|---:|---|
++| -1 | Comprovació acabada |
++| 0 | Comprovació acabada |
++| 1 | El número és positiu; Comprovació acabada |
++
++Explica quina instrucció ha d’estar dins del bloc i quina fora. Compara la indentació de Python amb la representació en pseudocodi.
++
++**Microrepte oral:** si calguera mostrar també un missatge quan no és positiu, quina alternativa necessitaríem? No cal programar-la encara.
++
++## Activitat 2 — Accés al taller de robòtica
++
++Demana l’edat i si la persona és sòcia del centre, té autorització i està bloquejada temporalment. Les tres respostes són `si/no`.
++
++Regles:
++
++1. Una persona bloquejada no pot accedir en cap cas.
++2. Una persona no bloquejada pot accedir si té 18 anys o més i és sòcia.
++3. També pot accedir si no està bloquejada, té entre 16 i 17 anys inclosos i té autorització.
++4. L’autorització no dona accés als menors de 16 anys ni als adults que no són socis.
++
++Guarda en una variable booleana si pot accedir i utilitza-la per a mostrar «Accés al taller autoritzat» només quan corresponga. Al final mostra sempre «Sol·licitud revisada».
++
++Tria tu els operadors i els parèntesis. Abans de programar, identifica la regla que anul·la les altres i les dues vies d’accés.
++
++### Proves pròpies
++
++Dissenya almenys sis casos que cobrisquen els límits d’edat, les dues vies d’accés, un menor sense autorització, un adult no soci i una persona bloquejada que compliria una via d’accés. Escriu el resultat esperat abans d’executar.
++
++### Depuració integrada
++
++Una altra persona proposa:
++
++```python
++pot_entrar = not bloquejat and edat >= 18 and soci or edat >= 16 and edat <= 17 and autoritzacio
+ ```
+ 
+-Si no es compleix la condició, **no mostres cap missatge**.
++Les variables d’estat són booleanes i `edat` és un enter. La condició és incorrecta per a estes regles. Troba un contraexemple, explica quina regla vulnera i corregix-la. Justifica què queda protegit pel bloqueig.
+ 
+----
++## Abans de continuar
+ 
+-## Exercici 2 — `if` amb igualtat
++Si pots llegir dades, crear booleans i justificar la condició amb autonomia, passa a l’activitat 3. Si tens una dificultat concreta, selecciona el reforç corresponent. No cal fer tot el banc.
++
++## Banc de reforç opcional
++
++El positiu ja s’ha integrat en l’activitat 1. Es conserven les altres cinc activitats elementals:
++
++<details markdown="1">
++<summary>Desplegar cinc exercicis de reforç</summary>
++
++### Reforç 2 — `if` amb igualtat
+ 
+ En este exercici practicarem una **comparació d’igualtat** dins d’un `if`.
+ 
+@@ -38,7 +104,7 @@
+ 
+ ---
+ 
+-## Exercici 3 — `if` amb rang (condició composta amb `and`)
++### Reforç 3 — `if` amb rang (condició composta amb `and`)
+ 
+ En este exercici utilitzarem una **condició composta**.
+ 
+@@ -52,14 +118,14 @@
+ 
+ ---
+ 
+-## Exercici 4 — `if` amb `or`
++### Reforç 4 — `if` amb `or`
+ 
+ En este exercici combinarem condicions amb l’operador `or`.
+ 
+ Demana a l’usuari:
+ 
+-* si és **VIP** (`True` o `False`),
+-* si és **soci** (`True` o `False`).
++* si és **VIP** (`"si"` o `"no"`),
++* si és **soci** (`"si"` o `"no"`).
+ 
+ Comprova si l’usuari és **VIP o soci**.
+ Si la condició és certa, mostra el missatge:
+@@ -70,11 +136,11 @@
+ 
+ ---
+ 
+-## Exercici 5 — `if` amb `not`
++### Reforç 5 — `if` amb `not`
+ 
+ En este exercici utilitzarem l’operador `not`.
+ 
+-Demana a l’usuari si és **repetidor** (`True` o `False`).
++Demana a l’usuari si és **repetidor** (`"si"` o `"no"`).
+ Comprova si **no és repetidor**.
+ Si la condició es compleix, mostra el missatge:
+ 
+@@ -84,15 +150,15 @@
+ 
+ ---
+ 
+-## Exercici 6 — `if` amb condició composta i parèntesis
++### Reforç 6 — `if` amb condició composta i parèntesis
+ 
+ En este exercici combinarem **diverses condicions** utilitzant `and`, `or` i parèntesis.
+ 
+ Demana a l’usuari:
+ 
+ * la seua **edat**,
+-* si és **VIP** (`True` o `False`),
+-* si és **soci** (`True` o `False`).
++* si és **VIP** (`"si"` o `"no"`),
++* si és **soci** (`"si"` o `"no"`).
+ 
+ Comprova si:
+ 
+@@ -106,3 +172,14 @@
+ ```
+ 
+ ---
++
++
++</details>
++
++## Registre de proves
++
++| Activitat i cas | Entrades | Resultat esperat | Resultat obtingut | Correcció necessària |
++|---|---|---|---|---|
++| | | | | |
++
++No copies el codi en el registre: explica els casos que comproven les regles.
+--- original/2.2.3-Condicionals Compostos.md
++++ revisio/2.2.3-Condicionals Compostos.md
+@@ -1,5 +1,5 @@
+ ---
+-title: 2.2.2 IF - ELSE - Condicionals Compostos
++title: 2.2.3 IF - ELSE - Condicionals Compostos
+ parent: 2.2 Estructura
+ layout: default
+ has_children: true
+@@ -14,7 +14,7 @@
+ 
+ Amb les estructures condicionals, un programa **no té un únic camí**, sinó que pot seguir **camins diferents d’execució** segons les condicions.
+ 
+-És important entendre que, en cada execució del programa, **Python només seguirà un d’aquests camins**.
++Dins d’una mateixa estructura `if/else` o `if/elif/else`, Python executa **com a màxim una de les alternatives**. Amb un `else` final sempre hi ha una alternativa aplicable. Això no s’ha de confondre amb diversos `if` independents, que poden executar diversos blocs.
+ 
+ ---
+ 
+@@ -108,6 +108,8 @@
+ 6. **no comprova cap altra condició**, encara que també poguera ser True.
+ 
+ * En una estructura `if / elif / else`, **només s’executa un camí possible**.
++* Si no hi ha `else` i totes les condicions són falses, no s’executa cap dels blocs de la cadena.
++* «Ix de l’estructura» significa que continua després de la cadena de condicionals, no que acabe el programa.
+ 
+ ---
+ 
+@@ -135,7 +137,7 @@
+ * `nota >= 9` és `False` → Python no entra.
+ * `nota >= 5` és `True` → Python entra en este bloc.
+ * El missatge “Aprovat” s’imprimeix.
+-* Python **ja no comprova el `else`**, encara que sempre està al final.
++* El `else` no té una condició pròpia: és l’alternativa que només s’executaria si totes les condicions anteriors foren falses. En este cas s’omet.
+ 
+ ---
+ 
+@@ -166,7 +168,7 @@
+ * Python entra en el primer `if`.
+ * Entra en eixe bloc i **ix de l’estructura**.
+ * El `elif` **no s’arriba ni a comprovar**.
+-* El cas “Excel·lent” queda inaccesible.
++* El cas “Excel·lent” queda inaccessible.
+ 
+ ### Exemple correcte
+ 
+@@ -180,7 +182,8 @@
+     print("Aprovat")
+ ```
+ 
+-* **Les condicions més restrictives han d’anar abans**.
++* **En esta classificació amb llindars solapats, les condicions més restrictives han d’anar abans**: primer `nota >= 9` i després `nota >= 5`.
++* En altres problemes, l’ordre ha de seguir les prioritats de l’enunciat. No és una regla universal d’ordenar totes les condicions de més a menys restrictiva.
+ 
+ ---
+ 
+@@ -269,7 +272,7 @@
+ 
+ ### Oblidar el `else` quan cal
+ 
+-Si volem que el programa **done resposta a tots els casos possibles**, cal afegir un `else`.
++Si volem una resposta per al cas en què cap condició de la cadena es complix, un `else` final permet cobrir-lo. No és obligatori afegir-lo si no cal fer res en eixe cas o si ja s’han cobert explícitament totes les possibilitats.
+ 
+ ---
+ 
+@@ -295,9 +298,87 @@
+ ### Condicions impossibles
+ 
+ ```python
++edat = 15
++
+ if edat < 10 and edat > 20:
++    print("Esta línia no s’executarà")
+ ```
+ 
+ Esta condició **mai pot ser True**, perquè una edat no pot complir les dues coses alhora.
+ 
+ ---
++
++## 3.7 Diversos `if` independents o una cadena amb `elif`?
++
++No representen la mateixa decisió.
++
++### Dos `if` independents
++
++```python
++nota = 9
++
++if nota >= 5:
++    print("Aprovat")
++
++if nota >= 9:
++    print("Excel·lent")
++```
++
++Eixida:
++
++```text
++Aprovat
++Excel·lent
++```
++
++Python comprova els dos `if`. Les dues condicions són certes i s’executen els dos blocs.
++
++### Una cadena d’alternatives
++
++```python
++nota = 9
++
++if nota >= 9:
++    print("Excel·lent")
++elif nota >= 5:
++    print("Aprovat")
++```
++
++Eixida:
++
++```text
++Excel·lent
++```
++
++La primera condició ja és certa. Python no avalua l’`elif` i continua després de la cadena.
++
++| Necessitat | Estructura adequada |
++|---|---|
++| Aplicar diverses accions compatibles | Diversos `if` independents |
++| Triar una única categoria | `if/elif/else` |
++| Fer una segona decisió només dins d’un cas | `if` anidat |
++
++En el cas de la factura de llum, els descomptes nocturn i social poden aplicar-se tots dos: no els hem de convertir en alternatives excloents amb `elif`.
++
++## 3.8 Validar una entrada sense bucles ni eixides anticipades
++
++Per a no calcular amb una dada incorrecta, podem situar el càlcul dins de l’alternativa vàlida:
++
++```python
++resposta = input("Eres soci? (si/no): ")
++
++if resposta != "si" and resposta != "no":
++    print("Resposta no vàlida")
++else:
++    soci = resposta == "si"
++    if soci:
++        print("Entrada amb descompte")
++    else:
++        print("Entrada normal")
++
++print("Final")
++```
++
++Si s’introduïx `potser`, només apareixen l’avís i el missatge final. El programa no tracta eixe text com un «no» vàlid. Encara no tornem a preguntar: això requerirà un bucle.
++
++El mateix patró permet interpretar «mostra un avís i no calcules res més» en els casos pràctics. No necessitem `exit()`, `quit()` ni funcions pròpies.
+--- original/2.2.3.1 -Exercicis IF-ELSE.md
++++ revisio/2.2.3.1 -Exercicis IF-ELSE.md
+@@ -1,246 +1,77 @@
+ ---
+-title: 2.2.2.1 Exercicis IF - ELSE - Condicionals Compostos
+-parent: 2.2.2 IF - ELSE - Condicionals Compostos
++title: 2.2.3.1 Exercicis IF - ELSE - Condicionals Compostos
++parent: 2.2.3 IF - ELSE - Condicionals Compostos
+ layout: default
+-has_children: true
+-nav_order: 30
+----
+-
+-
+-## Exercici 1 — `if ... else` bàsic
+-
+-En este exercici treballarem l’estructura **`if ... else` més senzilla**.
+-
+-Demana a l’usuari **la seua edat**.
+-Comprova si l’edat és **major o igual que 18**.
+-
+-* Si la condició és certa, mostra:
+-
+-  ```
+-  Ets major d'edat
+-  ```
+-* En cas contrari, mostra:
+-
+-  ```
+-  Ets menor d'edat
+-  ```
+-
+----
+-
+-## Exercici 2 — `if ... else` amb igualtat
+-
+-En este exercici practicarem una decisió amb **dos camins clars**.
+-
+-Demana a l’usuari **un número enter**.
+-Comprova si el número és **igual a 0**.
+-
+-* Si és 0, mostra:
+-
+-  ```
+-  El número és zero
+-  ```
+-* Si no ho és, mostra:
+-
+-  ```
+-  El número no és zero
+-  ```
+-
+----
+-
+-## Exercici 3 — `elif` amb tres opcions
+-
+-En este exercici treballarem **diversos casos possibles** amb `elif`.
+-
+-Demana a l’usuari **una nota numèrica**.
+-Mostra un missatge segons el valor:
+-
+-* si la nota és **major o igual que 9**:
+-
+-  ```
+-  Excel·lent
+-  ```
+-* si la nota és **major o igual que 5**:
+-
+-  ```
+-  Aprovat
+-  ```
+-* en qualsevol altre cas:
+-
+-  ```
+-  Suspés
+-  ```
+-
+----
+-
+-## Exercici 4 — Importància de l’ordre en `elif`
+-
+-En este exercici comprovarem que **l’ordre de les condicions és clau**.
+-
+-Demana a l’usuari **la seua edat**.
+-Mostra un missatge segons el cas:
+-
+-* si té **menys de 18 anys**:
+-
+-  ```
+-  Menor d'edat
+-  ```
+-* si té **menys de 65 anys**:
+-
+-  ```
+-  Adult
+-  ```
+-* en qualsevol altre cas:
+-
+-  ```
+-  Jubilat
+-  ```
+-
+-Col·loca les condicions **en l’ordre correcte** perquè el programa funcione bé.
+-
+----
+-
+-## Exercici 5 — `if` anidat (condició dins d’una altra)
+-
+-En este exercici utilitzarem un **`if` dins d’un altre `if`**.
+-
+-Demana a l’usuari:
+-
+-* la seua **edat**,
+-* si és **soci** (`True` o `False`).
+-
+-Funcionament:
+-
+-* Si l’edat és **menor que 18**, mostra:
+-
+-  ```
+-  Accés denegat
+-  ```
+-* Si l’edat és **18 o més**:
+-
+-  * si és soci, mostra:
+-
+-    ```
+-    Entrada amb descompte
+-    ```
+-  * si no és soci, mostra:
+-
+-    ```
+-    Entrada normal
+-    ```
+-
+----
+-
+-## Exercici 6 — Elecció entre `elif` i `if` anidat
+-
+-En este exercici reflexionarem sobre **quina estructura és més clara**.
+-
+-Demana a l’usuari **la seua edat**.
+-Mostra:
+-
+-* `Menor d'edat` si és menor de 18,
+-* `Adult` si té entre 18 i 64,
+-* `Jubilat` si té 65 o més.
+-
+-Resol l’exercici **utilitzant `elif`**, evitant `if` anidats innecessaris.
+-
+----
+-
+-
+-# Exercicis tipus Exàmen
+-
+-
+-
+-## Exercici 1 — Número parell o imparell
+-
+-
+-Demana a l’usuari un número enter i indica si és **parell** o **imparell**.
+-
+-
+-
+----
+-
+-## Exercici 2 — Major de tres números
+-
+-
+-Demana tres números i mostra quin és **el major**.
+-
+-
+----
+-
+-## Exercici 3 — Descompte segons import
+-
+-Demana l’import d’una compra:
+-
+-* si és **menor de 100**, no hi ha descompte
+-* si és **entre 100 i 200**, descompte del 10%
+-* si és **major de 200**, descompte del 20%
+-
+-Mostra el **preu final**.
+-
+-
+----
+-
+-## Exercici 4 — Nota vàlida
+-
+-
+-Demana una nota i comprova:
+-
+-* si està entre 0 i 10 → “Nota correcta”
+-* en cas contrari → “Nota incorrecta”
+-
+----
+-
+-## Exercici 5 — Calculadora amb menú
+-
+-Demana dos números i una opció:
+-
+-* 1 → sumar
+-* 2 → restar
+-* 3 → multiplicar
+-* 4 → dividir (controla la divisió per zero)
+-
+-Mostra el resultat.
+-
+-
+-
+-
+-## Exercici 6 — Accés a un sistema
+-
+-Demana:
+-
+-* edat
+-* si és VIP (True o False)
+-
+-Condicions:
+-
+-* menor de 18 → “Accés denegat”
+-* major o igual a 18:
+-
+-  * VIP → “Accés premium”
+-  * no VIP → “Accés normal”
+-
+-
+-
+----
+-
+-## Exercici 7 — Classificació de temperatura
+-
+-Demana una temperatura i classifica-la:
+-
+-* < 0 → “Gel”
+-* entre 0 i 15 → “Fred”
+-* entre 16 i 25 → “Temperatura suau”
+-* > 25 → “Calor”
+-
+-
+-
+-
+-
+-
+-# CAS PRÀCTIC 1 — TRANSPORT PÚBLIC 
+-
+-
+-Una empresa de transport vol calcular **quin títol es pot usar** i **quin preu final es paga** segons el perfil de la persona i el tipus de trajecte.
++has_children: false
++nav_order: 10
++---
++
++# Condicionals: de les alternatives a la resolució autònoma
++
++Continua les activitats 1 i 2 del [document anterior](<2.2.2.1-Exercicis IF.html>). Cada activitat incorpora un repte diferent i menys indicacions sobre l’estructura que has de triar.
++
++## Instruccions comunes
++
++- Utilitza els continguts de 2.1 i 2.2: variables, entrada i eixida, operadors i condicionals.
++- No utilitzes bucles, funcions pròpies, classes, col·leccions ni `try/except`.
++- Pressuposem entrades numèriques amb el format correcte; valida els valors que demane cada activitat.
++- Les respostes afirmatives o negatives són `si/no`. Quan es demane validar-les, qualsevol altre text és incorrecte.
++- Una dada invàlida provoca l’avís indicat i evita el càlcul. No cal tornar a preguntar ni utilitzar `exit()`.
++- Tria les estructures a partir de les regles. Guarda els resultats en variables i reunix la presentació final per a evitar repetir-la en cada alternativa.
++- Mostra els imports amb dos decimals i conserva la precisió dels càlculs intermedis.
++
++## Activitat 3 — Una qualificació amb dades vàlides
++
++Demana una nota decimal. Si no està entre 0 i 10 inclosos, mostra «Nota no vàlida» i no mostres qualificació.
++
++Per a una nota vàlida, mostra una sola categoria:
++
++- De 9 a 10 inclosos: «Excel·lent».
++- Des de 5 inclòs fins a menys de 9: «Aprovat».
++- Des de 0 inclòs fins a menys de 5: «Suspés».
++
++Decidix com separar validació i classificació. Justifica l’ordre i prepara almenys sis proves que cobrisquen 0, 5, 9 i 10, un decimal pròxim a un canvi i una nota invàlida.
++
++### Predicció integrada
++
++```python
++nota = 9
++if nota >= 5:
++    print("Aprovat")
++if nota >= 9:
++    print("Excel·lent")
++```
++
++Quants missatges apareixen? Complix l’enunciat? Explica què canviaries sense fer un altre programa complet.
++
++## Activitat 4 — Major de tres números, també amb empats
++
++Demana tres números decimals i mostra el valor més gran una sola vegada. Els empats són vàlids: no cal identificar posicions ni informar de l’empat.
++
++No utilitzes `max()`, ordenació ni col·leccions. Guarda el màxim en una variable i mostra’l al final.
++
++Exemple: amb 8, 8 i 5, el resultat és 8.
++
++Prepara proves amb el màxim en cada posició, dos màxims iguals, els tres valors iguals i tots els valors negatius. Explica per què el procediment funciona encara que hi haja empats.
++
++## Activitat 5 — Calculadora amb una operació segura
++
++Demana dos números decimals i una opció entera:
++
++| Opció | Operació |
++|---:|---|
++| 1 | Primer més segon |
++| 2 | Primer menys segon |
++| 3 | Primer per segon |
++| 4 | Primer dividit entre segon |
++
++Fes una sola operació. Si l’opció no és vàlida, mostra «Opció no vàlida» i cap resultat. Si es tria dividir i el segon número és zero, mostra «No es pot dividir entre zero» sense calcular la divisió. En els altres casos, mostra l’operació i el resultat.
++
++El menú es pregunta una vegada, sense bucles. Prepara proves de les quatre operacions, una opció invàlida, un divisor zero i un operand negatiu. Explica quina comprovació impedix la divisió per zero: no servix avisar després de calcular-la.
++
++## Activitat 6 — Transport públic
++
++Una empresa de transport vol calcular **quin tipus de trajecte s’aplica** i **quin preu final es paga** segons el perfil de la persona i el trajecte.
+ 
+ El programa ha de demanar:
+ 
+@@ -270,6 +101,10 @@
+   * si té **65 o més**, paga **un 40% menys**
+   * en qualsevol altre cas, paga el preu base
+ 
++**Prioritat expressa d’este exercici:** es conserva la regla original. La discapacitat s’avalua abans de l’edat. Per tant, una persona de 10 anys amb discapacitat paga el 50% de la tarifa base; una persona de 10 anys sense discapacitat viatja gratuïtament. No acumules descomptes ni tries automàticament el més favorable.
++
++Pressuposa una edat no negativa i respostes `"si"` o `"no"`. La validació obligatòria d’este cas és la del tipus de trajecte.
++
+ El programa ha de mostrar:
+ 
+ * el trajecte
+@@ -277,14 +112,15 @@
+ * quin descompte s’ha aplicat (o si és gratuït)
+ * el preu final
+ 
+----
+-
+-
+----
+-
+-# CAS PRÀCTIC 2 — FACTURA DE LLUM 
+-
+-
++### Prioritats, proves i encàrrec de canvi
++
++Explica per què no es poden aplicar tots els descomptes de manera independent. Comprovació inicial: trajecte urbà, 10 anys i discapacitat costa 0.75 €; sense discapacitat costa 0.00 €.
++
++Afig proves per als límits 12, 25, 26 i 65 anys, un trajecte invàlid i un perfil que complisca diverses regles.
++
++Quan funcione, fes-ne una còpia. L’empresa demana que **la gratuïtat dels menors de 12 anys tinga prioritat sobre qualsevol descompte**, també amb discapacitat. Canvia només allò necessari i conserva la resta de les regles. Identifica una prova que canvia i dues que es mantenen. Entrega el programa base i la còpia modificada.
++
++## Activitat 7 — Factura de llum
+ 
+ Una empresa elèctrica vol calcular el **cost estimat mensual** segons consum, potència contractada i si el client té bo social.
+ 
+@@ -299,14 +135,14 @@
+ 
+ 1. Validacions:
+ 
+-* si consum < 0 o potència <= 0 → mostra **“Dades no vàlides”** i para.
++* si consum < 0 o potència <= 0 → mostra **“Dades no vàlides”** i no calcules ni mostres cap import. Situa els càlculs dins de l’alternativa vàlida d’un `if/else`; no cal utilitzar `exit()`.
+ 
+ 2. Costos base:
+ 
+ * Cost per consum:
+ 
+   * fins a 100 kWh → 0.15 €/kWh
+-  * de 101 a 250 kWh → 0.20 €/kWh (aplica a tot el consum, per simplificar)
++  * més de 100 i fins a 250 kWh inclosos → 0.20 €/kWh (aplica a tot el consum, per simplificar)
+   * més de 250 kWh → 0.25 €/kWh (aplica a tot el consum, per simplificar)
+ * Cost per potència: 4.00 € per cada kW contractat
+ 
+@@ -314,6 +150,8 @@
+ 
+ * Si tarifa nocturna és `"si"` i el consum és **menor o igual que 200 kWh**, aplica un **5% de descompte** sobre el cost total.
+ * Si té bo social `"si"`, aplica després un **25% de descompte** sobre el total (després del possible descompte nocturn).
++
++Els dos ajustos són compatibles: poden aplicar-se en la mateixa factura. Si s’apliquen tots dos, el factor conjunt és `0.95 * 0.75`, no una resta directa del 30%. Pressuposa respostes `"si"` o `"no"` per a estes dues preguntes.
+ 
+ El programa ha de mostrar:
+ 
+@@ -324,4 +162,288 @@
+ * si s’ha aplicat bo social
+ * total final
+ 
+----
++### Disseny i depuració
++
++Indica quines decisions seleccionen una tarifa i quines poden ajustar conjuntament la mateixa factura.
++
++Comprovació: consum 200 kWh, potència 3 kW, nocturna si i bo social si. El cost previ és 52.00 € i el total final 37.05 €.
++
++Dissenya almenys huit proves: consum i potència invàlids, canvis de tarifa en 100 i 250 kWh, un decimal pròxim a un límit i les quatre combinacions dels ajustos quan poden aplicar-se.
++
++Una solució amb booleans ha escrit:
++
++```python
++if nocturna:
++    total = total * 0.95
++elif bo_social:
++    total = total * 0.75
++```
++
++Explica per què no representa dos ajustos compatibles i quina condició de consum falta. Proposa una correcció justificada.
++
++## Activitat 8 — Reserva d’una sala: repte de transferència
++
++Un centre vol acceptar o rebutjar sol·licituds i calcular-ne el pressupost.
++
++### Dades
++
++Demana hores de reserva i nombre d’assistents com a enters. Demana també cinc respostes `si/no`: si la persona responsable és major d’edat, si representa una associació registrada, si la sala està disponible, si necessita projector i si necessita neteja addicional.
++
++### Validació
++
++Les hores han d’estar entre 1 i 8 i els assistents entre 1 i 30, amb tots els extrems inclosos. Les cinc respostes han de ser exactament `si` o `no`. Si alguna dada no és vàlida, mostra «Dades no vàlides» i no decidisques la reserva ni calcules imports.
++
++### Acceptació
++
++Amb dades vàlides, aplica estes prioritats:
++
++1. Si no hi ha disponibilitat, mostra «Sala no disponible».
++2. Si està disponible però la persona responsable no és major d’edat, mostra «Cal una persona responsable major d’edat».
++3. Si està disponible i la persona responsable és major d’edat, accepta i calcula el pressupost.
++
++Si coincidixen les dues causes de rebuig, preval la falta de disponibilitat. No calcules imports de reserves rebutjades.
++
++### Pressupost
++
++- D’1 a 3 hores incloses: 12 € per hora.
++- Més de 3 i fins a 8 hores: 10 € per hora, aplicats a totes les hores.
++- Una associació registrada té un 20% de descompte només sobre el lloguer per hores.
++- El projector suma 8 € una sola vegada.
++- La neteja addicional suma 15 € una sola vegada.
++- Els complements són compatibles i no tenen descompte.
++
++Mostra hores, assistents, tarifa horària, lloguer abans del descompte, descompte aplicat, cost de cada complement i total amb dos decimals. Els assistents només intervenen en la capacitat, no en el preu.
++
++### Treball autònom
++
++No s’indica l’estructura. Separa validació, rebuig i pressupost; identifica decisions excloents i compatibles. Prepara almenys huit proves de límits, dades invàlides, les causes de rebuig i la seua coincidència, i complements compatibles. Calcula manualment dos pressupostos acceptats abans d’executar.
++
++## Entrega del recorregut principal
++
++Un programa per activitat; per a la 6, també la còpia amb el canvi. Afig les justificacions i un registre breu d’entrades, resultats esperats i obtinguts i correccions. No calen captures de totes les execucions ni repetir el codi en el registre.
++
++## Banc de reforç opcional
++
++Els exercicis elementals no integrats directament es conserven ací. No són una segona llista obligatòria. Els dos plantejaments de classificació per edat poden servir per a comparar estructures sobre el mateix codi; no cal repetir-ne el programa complet.
++
++<details markdown="1">
++<summary>Desplegar sis exercicis guiats de reforç</summary>
++
++### Reforç guiat 1 — `if ... else` bàsic
++
++En este exercici treballarem l’estructura **`if ... else` més senzilla**.
++
++Demana a l’usuari **la seua edat**.
++Comprova si l’edat és **major o igual que 18**.
++
++* Si la condició és certa, mostra:
++
++  ```
++  Ets major d'edat
++  ```
++* En cas contrari, mostra:
++
++  ```
++  Ets menor d'edat
++  ```
++
++---
++
++### Reforç guiat 2 — `if ... else` amb igualtat
++
++En este exercici practicarem una decisió amb **dos camins clars**.
++
++Demana a l’usuari **un número enter**.
++Comprova si el número és **igual a 0**.
++
++* Si és 0, mostra:
++
++  ```
++  El número és zero
++  ```
++* Si no ho és, mostra:
++
++  ```
++  El número no és zero
++  ```
++
++---
++
++### Reforç guiat 3 — `elif` amb tres opcions
++
++En este exercici treballarem **diversos casos possibles** amb `elif`.
++
++Demana a l’usuari **una nota numèrica**.
++Mostra un missatge segons el valor:
++
++* si la nota és **major o igual que 9**:
++
++  ```
++  Excel·lent
++  ```
++* si la nota és **major o igual que 5**:
++
++  ```
++  Aprovat
++  ```
++* en qualsevol altre cas:
++
++  ```
++  Suspés
++  ```
++
++---
++
++### Reforç guiat 4 — Importància de l’ordre en `elif`
++
++En este exercici comprovarem que **l’ordre de les condicions és clau**.
++
++Demana a l’usuari **la seua edat**.
++Mostra un missatge segons el cas:
++
++* si té **menys de 18 anys**:
++
++  ```
++  Menor d'edat
++  ```
++* si té **menys de 65 anys**:
++
++  ```
++  Adult
++  ```
++* en qualsevol altre cas:
++
++  ```
++  Jubilat
++  ```
++
++Col·loca les condicions **en l’ordre correcte** perquè el programa funcione bé.
++
++---
++
++### Reforç guiat 5 — `if` anidat (condició dins d’una altra)
++
++En este exercici utilitzarem un **`if` dins d’un altre `if`**.
++
++Demana a l’usuari:
++
++* la seua **edat**,
++* si és **soci** (`"si"` o `"no"`).
++
++Funcionament:
++
++* Si l’edat és **menor que 18**, mostra:
++
++  ```
++  Accés denegat
++  ```
++* Si l’edat és **18 o més**:
++
++  * si és soci, mostra:
++
++    ```
++    Entrada amb descompte
++    ```
++  * si no és soci, mostra:
++
++    ```
++    Entrada normal
++    ```
++
++---
++
++### Reforç guiat 6 — Elecció entre `elif` i `if` anidat
++
++En este exercici reflexionarem sobre **quina estructura és més clara**.
++
++Demana a l’usuari **la seua edat**.
++Mostra:
++
++* `Menor d'edat` si és menor de 18,
++* `Adult` si té entre 18 i 64,
++* `Jubilat` si té 65 o més.
++
++Resol l’exercici **utilitzant `elif`**, evitant `if` anidats innecessaris.
++
++---
++
++
++
++</details>
++
++<details markdown="1">
++<summary>Desplegar cinc exercicis de reforç autònom</summary>
++
++
++
++
++
++### Reforç autònom 1 — Número parell o imparell
++
++
++Demana a l’usuari un número enter i indica si és **parell** o **imparell**.
++
++
++
++---
++
++### Reforç autònom 3 — Descompte segons import
++
++Demana l’import d’una compra:
++
++* si és **menor de 100**, no hi ha descompte
++* si és **entre 100 i 200, tots dos inclosos**, descompte del 10%
++* si és **major de 200**, descompte del 20%
++
++Mostra el **preu final**.
++
++
++---
++
++### Reforç autònom 4 — Nota vàlida
++
++
++Demana una nota i comprova:
++
++* si està entre 0 i 10, tots dos inclosos → “Nota correcta”
++* en cas contrari → “Nota incorrecta”
++
++---
++
++### Reforç autònom 6 — Accés a un sistema
++
++Demana:
++
++* edat
++* si és VIP (`"si"` o `"no"`)
++
++Condicions:
++
++* menor de 18 → “Accés denegat”
++* major o igual a 18:
++
++  * VIP → “Accés premium”
++  * no VIP → “Accés normal”
++
++
++
++---
++
++### Reforç autònom 7 — Classificació de temperatura
++
++Demana una temperatura i classifica-la:
++
++* < 0 → “Gel”
++* entre 0 i 15, tots dos inclosos → “Fred”
++* major de 15 i menor o igual que 25 → “Temperatura suau”
++* > 25 → “Calor”
++
++
++
++
++
++
++
++</details>
++
++Utilitza [Repàs i proves](<2.2.4-Repas i proves.html>) quan aparega cada dificultat: no cal reservar-ho tot per al final ni fer més programes complets amb el mateix esquema.
+--- /dev/null
++++ revisio/2.2.4-Repas i proves.md
+@@ -0,0 +1,256 @@
++---
++title: 2.2.4 Repàs i proves
++parent: 2.2 Estructura
++layout: default
++has_children: false
++nav_order: 40
++---
++
++# 2.2.4 Repàs, seguiment i proves de condicionals
++
++Esta pàgina reforça les explicacions i els exercicis anteriors. No incorpora bucles, funcions pròpies ni estructures de dades noves.
++
++## 1. Seguim una condició pas a pas
++
++Considera esta regla: pot entrar una persona major d’edat que siga sòcia, o qualsevol persona VIP.
++
++```python
++edat = 17
++soci = True
++vip = False
++
++if (edat >= 18 and soci) or vip:
++    print("Pot entrar")
++else:
++    print("Accés denegat")
++```
++
++Per a raonar, podem descompondre la condició:
++
++| Edat | Soci | VIP | `edat >= 18` | `(edat >= 18 and soci)` | Condició completa | Eixida |
++|---:|---|---|---|---|---|---|
++| 17 | True | False | False | False | False | Accés denegat |
++| 18 | True | False | True | True | True | Pot entrar |
++| 18 | False | False | True | False | False | Accés denegat |
++| 17 | False | True | False | False | True | Pot entrar |
++
++La taula permet estudiar els valors lògics. L’avaluació real pot ometre alguna part per curtcircuit: si `edat >= 18` és falsa, l’`and` no necessita consultar `soci`; si la primera part de l’`or` és certa, no necessita consultar `vip`.
++
++**Activitat:** afig dos casos diferents a la taula i justifica el resultat abans d’executar-los.
++
++## 2. Taules de veritat bàsiques
++
++Quan A i B són booleans:
++
++| A | B | `A and B` | `A or B` |
++|---|---|---|---|
++| False | False | False | False |
++| False | True | False | True |
++| True | False | False | True |
++| True | True | True | True |
++
++| A | `not A` |
++|---|---|
++| False | True |
++| True | False |
++
++## 3. Seguim una cadena d’alternatives
++
++```python
++nota = 6.5
++
++if nota >= 9:
++    print("Excel·lent")
++elif nota >= 5:
++    print("Aprovat")
++else:
++    print("Suspés")
++
++print("Final")
++```
++
++| Pas | Comprovació o acció | Resultat |
++|---|---|---|
++| 1 | `nota >= 9` | False: no entra en el primer bloc |
++| 2 | `nota >= 5` | True: mostra «Aprovat» |
++| 3 | Alternativa `else` | S’omet; no té una condició pròpia |
++| 4 | Instrucció posterior a la cadena | Mostra «Final» |
++
++Eixida:
++
++```text
++Aprovat
++Final
++```
++
++**Activitat:** repetix el seguiment amb notes 4.99 i 9. Indica quines condicions no s’arriben a avaluar.
++
++## 4. Predicció d’eixides
++
++Primer escriu la resposta sense executar el codi. Després comprova-la.
++
++### Predicció 1: `if` independents
++
++```python
++numero = 12
++
++if numero > 0:
++    print("Positiu")
++if numero % 2 == 0:
++    print("Parell")
++print("Final")
++```
++
++Quants missatges apareixen? Per què les dues decisions poden aplicar-se a la vegada?
++
++### Predicció 2: ordre dels llindars
++
++```python
++nota = 9
++
++if nota >= 5:
++    print("Aprovat")
++elif nota >= 9:
++    print("Excel·lent")
++```
++
++Quin missatge apareix? Què has de canviar si vols que una nota de 9 es classifique com a excel·lent?
++
++### Predicció 3: comprovació interna
++
++```python
++edat = 16
++soci = True
++
++if edat >= 18:
++    if soci:
++        print("Descompte")
++    else:
++        print("Tarifa normal")
++else:
++    print("Accés denegat")
++```
++
++S’arriba a comprovar `soci`? A quin `if` correspon cada `else`?
++
++### Predicció 4: curtcircuit
++
++```python
++divisor = 0
++
++if divisor != 0 and 20 / divisor >= 4:
++    print("Quocient suficient")
++print("Final")
++```
++
++Hi ha una divisió per zero? Explica per què importa l’ordre de les dues parts.
++
++## 5. Depuració: localitza l’error i justifica la correcció
++
++Els fragments d’este apartat són **incorrectes expressament**. Alguns no es poden executar i altres s’executen però no fan allò que es demana.
++
++### Error 1: assignació dins del `if`
++
++```python
++edat = 18
++
++if edat = 18:
++    print("Té 18 anys")
++```
++
++Identifica l’operador que hauria d’utilitzar-se per a comprovar la igualtat.
++
++### Error 2: text que es confon amb un booleà
++
++```python
++soci = bool(input("Eres soci? (si/no): "))
++
++if soci:
++    print("Descompte")
++else:
++    print("Tarifa normal")
++```
++
++Per què respondre `no` també dona descompte? Reescriu la lectura amb una comparació. Pressuposa respostes `si` o `no`.
++
++### Error 3: interval impossible
++
++```python
++edat = 15
++
++if edat >= 12 and edat <= 10:
++    print("Adolescent")
++```
++
++L’objectiu és reconéixer les edats entre 12 i 17, incloses. Corregix els límits i prepara proves amb 11, 12, 17 i 18.
++
++### Error 4: divisió abans de la comprovació
++
++```python
++divisor = 0
++
++if 10 / divisor > 2 and divisor != 0:
++    print("Quocient major que 2")
++```
++
++La comprovació arriba a temps? Reordena les parts perquè no es calcule la divisió quan el divisor és zero.
++
++### Error 5: dos descomptes compatibles tractats com a alternatives
++
++```python
++total = 100
++nocturna = True
++bo_social = True
++
++if nocturna:
++    total = total * 0.95
++elif bo_social:
++    total = total * 0.75
++
++print(f"{total:.2f}")
++```
++
++Les regles indiquen que s’han d’aplicar els dos descomptes, un després de l’altre. Quina estructura has d’utilitzar? El resultat correcte per a estes dades és `71.25`, no `95.00` ni `70.00`.
++
++## 6. Com triar casos de prova
++
++Una sola execució amb una dada intermèdia no comprova bé un condicional.
++
++Per a cada llindar, prova un valor inferior, el mateix llindar i un valor superior. Si la dada és decimal, utilitza també decimals pròxims.
++
++| Regla | Proves recomanades |
++|---|---|
++| Major d’edat des dels 18 | 17, 18, 19 |
++| Adolescent entre 12 i 17 inclosos | 11, 12, 17, 18 |
++| Aprovat des de 5 i excel·lent des de 9 | 4.99, 5, 8.99, 9 |
++| Descompte entre 100 i 200 inclosos | 99.99, 100, 200, 200.01 |
++| Temperatura suau si és major de 15 i fins a 25 | 15, 15.5, 25, 25.1 |
++| Divisió per zero | Divisor 0 i divisor diferent de 0 |
++
++En decisions amb prioritats, prova perfils que complisquen diverses condicions a la vegada. Per exemple, un menor de 12 anys amb discapacitat en el cas del transport.
++
++En decisions independents, prova les quatre combinacions: cap condició certa, només la primera, només la segona i les dues certes.
++
++### Plantilla del registre
++
++| Cas | Entrada | Resultat esperat | Resultat obtingut | Correcte? |
++|---|---|---|---|---|
++| Límit inferior | | | | |
++| Valor del límit | | | | |
++| Límit superior | | | | |
++| Cas especial o invàlid | | | | |
++
++## 7. Autocomprovació final
++
++Abans de passar a bucles, hauries de poder:
++
++- Explicar la diferència entre una comparació i una assignació.
++- Distingir un text `"False"` d’un booleà `False`.
++- Llegir una resposta `si/no` i obtindre una variable booleana.
++- Escriure un `if` amb una variable booleana directament.
++- Identificar quins blocs s’executen i on continua el programa.
++- Triar entre `if` independents, `elif` i condicionals anidats.
++- Justificar l’ordre de les condicions.
++- Evitar una divisió per zero mitjançant comprovacions.
++- Comprovar límits i detectar intervals sense cobrir.
++- Validar un valor sense bucles, evitant executar els càlculs quan no és vàlid.

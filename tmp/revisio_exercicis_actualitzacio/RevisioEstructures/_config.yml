@@ -1,0 +1,22 @@
+title: Revisió 2.2 · Python
+description: Còpia revisada de la unitat 2.2 de Python
+lang: ca
+theme: just-the-docs
+url: ""
+baseurl: ""
+search_enabled: true
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+exclude:
+  - README.md
+  - REGISTRE_REVISIO.md
+  - revisio.patch
+  - originals_sha256.json
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - comprovacio.json
+  - compilacio.log
